@@ -1522,6 +1522,721 @@
 </div>
 </div>
 
+
+<!-- HALAMAN SARAN & KRITIK -->
+<div id="page-saran-kritik" class="hidden">
+
+<section id="saran-kritik" class="feedback-section">
+
+  <!-- HEADER -->
+  <div class="feedback-heading">
+    <div class="feedback-icon">✦</div>
+    <div>
+      <p class="feedback-eyebrow">ORASY 26 • VOICE YOUR THOUGHTS</p>
+      <h2>Saran & Kritik</h2>
+      <p class="feedback-subtitle">
+        Sampaikan pendapatmu untuk ORASY 26 menjadi lebih baik.
+      </p>
+    </div>
+  </div>
+
+  <!-- PERINGATAN -->
+  <div class="feedback-warning">
+    <div class="warning-header">
+      <div class="warning-icon">⚠️</div>
+      <div>
+        <h3>PERINGATAN!</h3>
+        <p>Harap baca dan patuhi seluruh ketentuan berikut.</p>
+      </div>
+    </div>
+
+    <div class="warning-content">
+
+      <div class="warning-item">
+        <span>01</span>
+        <p>Dilarang mengirim saran atau kritik yang aneh, tidak pantas, maupun di luar tujuan ORASY 26.</p>
+      </div>
+
+      <div class="warning-item">
+        <span>02</span>
+        <p>Dilarang menggunakan kata-kata kasar, kotor, hinaan, atau bahasa yang tidak sopan.</p>
+      </div>
+
+      <div class="warning-item">
+        <span>03</span>
+        <p>Dilarang menyinggung fisik, penampilan, kekurangan, maupun kondisi pribadi seseorang.</p>
+      </div>
+
+      <div class="warning-item">
+        <span>04</span>
+        <p>Dilarang melakukan perundungan, mengejek, mengancam, memfitnah, atau menyebarkan kebencian.</p>
+      </div>
+
+      <div class="warning-item">
+        <span>05</span>
+        <p>Dilarang mengirim pesan palsu, spam, provokasi, atau bercanda secara berlebihan.</p>
+      </div>
+
+      <div class="warning-item">
+        <span>06</span>
+        <p>Berikan saran dan kritik dengan bahasa yang sopan, jelas, jujur, serta membangun.</p>
+      </div>
+
+    </div>
+
+    <div class="warning-footer">
+      <span>🛡️</span>
+      <p>
+        Setiap pesan akan ditinjau oleh pengelola ORASY 26.
+        Pesan yang melanggar ketentuan dapat diabaikan dan tidak ditindaklanjuti.
+      </p>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <form id="feedbackForm">
+
+    <div class="feedback-field">
+      <label>Jenis Pesan</label>
+      <div class="feedback-options">
+        <label class="feedback-choice">
+          <input type="radio" name="jenis" value="Saran" checked>
+          <span>💡 Saran</span>
+        </label>
+        <label class="feedback-choice">
+          <input type="radio" name="jenis" value="Kritik">
+          <span>📝 Kritik</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="feedback-field">
+      <label for="recipientGroup">Ditujukan Kepada</label>
+      <select id="recipientGroup" required>
+        <option value="">Pilih tujuan</option>
+        <option value="Ikhwan">Ikhwan</option>
+        <option value="Akhwat">Akhwat</option>
+        <option value="Semua">Semua</option>
+      </select>
+    </div>
+
+    <div class="feedback-field" id="recipientNameWrapper" hidden>
+      <label for="recipientName">Pilih Nama Penerima</label>
+      <select id="recipientName">
+        <option value="">Pilih nama</option>
+      </select>
+    </div>
+
+    <div class="feedback-field">
+      <label for="senderName">Nama Pengirim</label>
+      <input
+        id="senderName"
+        type="text"
+        maxlength="60"
+        placeholder="Masukkan nama kamu (boleh dikosongkan)">
+      <small>Kosongkan jika ingin mengirim sebagai Anomali.</small>
+    </div>
+
+    <div class="feedback-field">
+      <label for="schoolLevel">Jenjang</label>
+      <select id="schoolLevel" required>
+        <option value="">Pilih jenjang</option>
+        <option value="SMP">SMP</option>
+        <option value="SMA">SMA</option>
+      </select>
+    </div>
+
+    <div class="feedback-field">
+      <label for="schoolClass">Kelas</label>
+      <select id="schoolClass" required disabled>
+        <option value="">Pilih jenjang terlebih dahulu</option>
+      </select>
+    </div>
+
+    <div class="feedback-field">
+      <label for="feedbackMessage">Isi Saran / Kritik</label>
+      <textarea
+        id="feedbackMessage"
+        rows="6"
+        maxlength="5000"
+        required
+        placeholder="Tuliskan saran atau kritik kamu di sini..."></textarea>
+
+      <div class="feedback-counter">
+        <span>Pesan kamu akan disampaikan kepada owner.</span>
+        <span id="feedbackCount">0/5000</span>
+      </div>
+    </div>
+
+    <button type="submit" id="feedbackSubmit" class="feedback-submit">
+      <span>✉</span>
+      <span id="submitText">Kirim Saran & Kritik</span>
+    </button>
+
+    <div id="feedbackStatus" class="feedback-status" role="status"></div>
+
+    <div class="feedback-privacy">
+      🔒 Data dan pesan hanya diteruskan ke pengelola ORASY 26.
+    </div>
+
+  </form>
+</section>
+
+<style>
+.feedback-section {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  margin: 24px 0;
+  border-radius: 25px;
+  background: linear-gradient(145deg,#fffdf7,#fff7e6,#ffffff);
+  border: 1px solid rgba(212,165,65,.25);
+  box-shadow: 0 12px 35px rgba(100,75,20,.09);
+  color: #263247;
+}
+
+.feedback-section::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(244,199,91,.16);
+  filter: blur(55px);
+  border-radius: 50%;
+  right: -60px;
+  top: -65px;
+  pointer-events: none;
+}
+
+.feedback-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.feedback-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: linear-gradient(135deg,#f4d47e,#d69d2e);
+  color: white;
+  font-size: 23px;
+  box-shadow: 0 6px 16px rgba(194,145,40,.22);
+}
+
+.feedback-eyebrow {
+  color: #b18027;
+  font-size: 8px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  margin: 0 0 4px;
+}
+
+.feedback-heading h2 {
+  font-size: 21px;
+  font-weight: 900;
+  margin: 0;
+  color: #263247;
+}
+
+.feedback-subtitle {
+  font-size: 11px;
+  color: #7b8492;
+  margin: 4px 0 0;
+  line-height: 1.5;
+}
+
+/* KOTAK PERINGATAN */
+.feedback-warning {
+  position: relative;
+  margin: 0 0 23px;
+  padding: 17px;
+  border-radius: 19px;
+  background: linear-gradient(145deg,#fff8ed,#fff1e9);
+  border: 1px solid rgba(220,120,65,.25);
+  box-shadow: 0 7px 20px rgba(160,85,35,.07);
+  overflow: hidden;
+}
+
+.feedback-warning::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,160,80,.13);
+  filter: blur(35px);
+  right: -35px;
+  top: -40px;
+  pointer-events: none;
+}
+
+.warning-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.warning-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: linear-gradient(135deg,#f5b65c,#e87942);
+  font-size: 20px;
+  box-shadow: 0 5px 13px rgba(220,120,50,.2);
+}
+
+.warning-header h3 {
+  margin: 0;
+  color: #a64027;
+  font-size: 14px;
+  font-weight: 950;
+  letter-spacing: 1px;
+}
+
+.warning-header p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #9a6b54;
+}
+
+.warning-content {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  position: relative;
+}
+
+.warning-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(220,150,100,.13);
+}
+
+.warning-item span {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #fff0df;
+  color: #bd6738;
+  font-size: 9px;
+  font-weight: 950;
+}
+
+.warning-item p {
+  margin: 0;
+  color: #67483d;
+  font-size: 10.5px;
+  line-height: 1.65;
+  font-weight: 600;
+}
+
+.warning-footer {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  margin-top: 13px;
+  padding: 11px;
+  border-radius: 11px;
+  background: rgba(226,157,83,.12);
+  color: #85532f;
+}
+
+.warning-footer span {
+  font-size: 15px;
+}
+
+.warning-footer p {
+  margin: 0;
+  font-size: 9.5px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+/* FORM */
+.feedback-field {
+  position: relative;
+  margin-bottom: 17px;
+}
+
+.feedback-field[hidden] {
+  display: none !important;
+}
+
+.feedback-field > label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #344054;
+}
+
+.feedback-field input[type="text"],
+.feedback-field select,
+.feedback-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 13px;
+  border: 1px solid #e8dfcc;
+  background: rgba(255,255,255,.9);
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: #263247;
+  transition: .25s;
+  box-sizing: border-box;
+}
+
+.feedback-field textarea {
+  min-height: 135px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.feedback-field input:focus,
+.feedback-field select:focus,
+.feedback-field textarea:focus {
+  border-color: #d6a43e;
+  box-shadow: 0 0 0 3px rgba(214,164,62,.12);
+}
+
+.feedback-field select:disabled {
+  opacity: .55;
+}
+
+.feedback-field small {
+  display: block;
+  margin-top: 6px;
+  color: #89909d;
+  font-size: 10px;
+}
+
+.feedback-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.feedback-choice {
+  cursor: pointer;
+}
+
+.feedback-choice input {
+  display: none;
+}
+
+.feedback-choice span {
+  display: block;
+  padding: 13px;
+  text-align: center;
+  border-radius: 13px;
+  border: 1px solid #e8dfcc;
+  background: white;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.feedback-choice input:checked + span {
+  border-color: #d5a13c;
+  background: #fff6df;
+  color: #9b6b17;
+  box-shadow: 0 4px 12px rgba(200,150,40,.1);
+}
+
+.feedback-counter {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 7px;
+  color: #8b929e;
+  font-size: 9px;
+}
+
+.feedback-submit {
+  width: 100%;
+  border: 0;
+  border-radius: 14px;
+  padding: 14px;
+  background: linear-gradient(110deg,#d9a53d,#f2d17b,#c58c25);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  box-shadow: 0 8px 20px rgba(190,140,40,.22);
+  transition: .25s;
+}
+
+.feedback-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 11px 25px rgba(190,140,40,.3);
+}
+
+.feedback-submit:disabled {
+  opacity: .6;
+  cursor: wait;
+  transform: none;
+}
+
+.feedback-status {
+  display: none;
+  padding: 11px;
+  margin-top: 12px;
+  border-radius: 11px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.feedback-status.success {
+  display: block;
+  background: #e8f8ee;
+  color: #168044;
+}
+
+.feedback-status.error {
+  display: block;
+  background: #fff0f0;
+  color: #c03939;
+}
+
+.feedback-privacy {
+  text-align: center;
+  color: #9299a3;
+  font-size: 9px;
+  margin-top: 15px;
+}
+
+@media(max-width:380px) {
+  .feedback-section {
+    padding: 16px;
+  }
+
+  .feedback-heading h2 {
+    font-size: 19px;
+  }
+
+  .feedback-warning {
+    padding: 13px;
+  }
+}
+</style>
+
+<script>
+(function () {
+  const form = document.getElementById("feedbackForm");
+  if (!form || form.dataset.initialized === "true") return;
+  form.dataset.initialized = "true";
+
+  // GANTI DENGAN TOKEN BOT BARU
+  const BOT_TOKEN = "9276029770:AAFOmsCyJ65_5HLeDEgOSsjpJOZWksDH_3c";
+  const OWNER_ID = "7510017426";
+
+  const ikhwan = [
+    "Mujahid", "Zaidan", "Said", "Biliy", "Fatih",
+    "Sabiq", "Resta", "Hamam", "Yusuf", "Fahwi",
+    "Tsaqif", "Raffi", "ZamZam", "Nizam R."
+  ];
+
+  const akhwat = [
+    "Khoirunisa Isnaeni", "Nistrina", "Neisya", "Naira",
+    "Amirah", "Zahra", "Afifah", "Fazila", "Indah",
+    "Azra", "Alana", "Fachira", "Aisyah", "Nabila",
+    "Safa", "Hirin"
+  ];
+
+  const recipientGroup = document.getElementById("recipientGroup");
+  const recipientName = document.getElementById("recipientName");
+  const recipientWrapper = document.getElementById("recipientNameWrapper");
+  const schoolLevel = document.getElementById("schoolLevel");
+  const schoolClass = document.getElementById("schoolClass");
+  const message = document.getElementById("feedbackMessage");
+  const counter = document.getElementById("feedbackCount");
+  const status = document.getElementById("feedbackStatus");
+  const submit = document.getElementById("feedbackSubmit");
+  const submitText = document.getElementById("submitText");
+
+  recipientGroup.addEventListener("change", function () {
+    recipientName.innerHTML =
+      '<option value="">Pilih nama penerima</option>';
+
+    const group = this.value;
+    recipientWrapper.hidden =
+      group !== "Ikhwan" && group !== "Akhwat";
+
+    const names = group === "Ikhwan"
+      ? ikhwan
+      : group === "Akhwat" ? akhwat : [];
+
+    names.forEach(name => {
+      const option = document.createElement("option");
+      option.value = name;
+      option.textContent = name;
+      recipientName.appendChild(option);
+    });
+
+    recipientName.required = !recipientWrapper.hidden;
+  });
+
+  schoolLevel.addEventListener("change", function () {
+    schoolClass.innerHTML = "";
+
+    const grades = this.value === "SMP"
+      ? ["Kelas 7", "Kelas 8", "Kelas 9", "Anomali"]
+      : this.value === "SMA"
+        ? ["Kelas 10", "Kelas 11", "Kelas 12", "Anomali"]
+        : [];
+
+    const first = document.createElement("option");
+    first.value = "";
+    first.textContent = grades.length
+      ? "Pilih kelas"
+      : "Pilih jenjang terlebih dahulu";
+
+    schoolClass.appendChild(first);
+
+    grades.forEach(grade => {
+      const option = document.createElement("option");
+      option.value = grade;
+      option.textContent = grade;
+      schoolClass.appendChild(option);
+    });
+
+    schoolClass.disabled = grades.length === 0;
+  });
+
+  message.addEventListener("input", function () {
+    counter.textContent = this.value.length + "/5000";
+  });
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const group = recipientGroup.value;
+    const target = group === "Semua"
+      ? "Semua"
+      : recipientName.value;
+
+    if (!group || !target || !schoolLevel.value ||
+        !schoolClass.value || !message.value.trim()) {
+      showStatus("Lengkapi semua pilihan dan isi pesan.", "error");
+      return;
+    }
+
+    if (!BOT_TOKEN || BOT_TOKEN === "ISI_TOKEN_BOT_BARU") {
+      showStatus("Token bot belum diisi.", "error");
+      return;
+    }
+
+    const sender =
+      document.getElementById("senderName").value.trim() || "Anomali";
+
+    const type =
+      form.querySelector('input[name="jenis"]:checked').value;
+
+    const text = [
+      "📩 SARAN & KRITIK ORASY 26",
+      "",
+      "Jenis: " + type,
+      "Tujuan: " + group,
+      "Nama Tujuan: " + target,
+      "Pengirim: " + sender,
+      "Jenjang: " + schoolLevel.value,
+      "Kelas: " + schoolClass.value,
+      "",
+      "Isi pesan:",
+      message.value.trim()
+    ].join("\n");
+
+    submit.disabled = true;
+    submitText.textContent = "Mengirim pesan...";
+
+    try {
+      const response = await fetch(
+        "https://api.telegram.org/bot" +
+        BOT_TOKEN + "/sendMessage",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            chat_id: OWNER_ID,
+            text: text
+          })
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(
+          result.description || "Telegram gagal mengirim pesan."
+        );
+      }
+
+      showStatus(
+        "✓ Berhasil! Pesan sudah dikirim kepada owner ORASY 26.",
+        "success"
+      );
+
+      form.reset();
+
+      recipientName.innerHTML =
+        '<option value="">Pilih nama</option>';
+      recipientWrapper.hidden = true;
+      recipientName.required = false;
+
+      schoolClass.innerHTML =
+        '<option value="">Pilih jenjang terlebih dahulu</option>';
+      schoolClass.disabled = true;
+
+      counter.textContent = "0/5000";
+
+    } catch (error) {
+      showStatus(
+        "Gagal mengirim. Periksa koneksi atau konfigurasi bot. " +
+        error.message,
+        "error"
+      );
+    } finally {
+      submit.disabled = false;
+      submitText.textContent = "Kirim Saran & Kritik";
+    }
+  });
+
+  function showStatus(text, type) {
+    status.textContent = text;
+    status.className = "feedback-status " + type;
+  }
+})();
+</script>
+
+</div>
+
+
         <!-- ==================== HALAMAN 2: TUGAS KERJA & PROKER ==================== -->
         <div id="page-proker" class="page-section hidden">
             <div class="mb-8">
@@ -2213,6 +2928,14 @@
                   <span>📱</span> Aplikasi Orasy 26
                 </button>
 
+                <button id="btn-nav-saran-kritik"
+    onclick="switchPage('saran-kritik')"
+    class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
+
+    <span>💬</span>
+    <span>Saran & Kritik</span>
+</button>
+
                 <!-- KATEGORI JUDUL: TUGAS KERJA & PROKER -->
                 <div class="pt-3 border-t-2 border-stone-200 mt-2">
                     <div class="text-[11px] font-extrabold uppercase tracking-wider text-stone-500 mb-2 px-1 flex items-center gap-1.5">
@@ -2334,98 +3057,108 @@
         }
 
         function switchPage(pageName, subSectionId = null) {
-            const pageHome = document.getElementById('page-home');
-            const pageProfil = document.getElementById('page-profil');
-            const pageGaleri = document.getElementById('page-galeri');
-            const pageAplikasi = document.getElementById('page-aplikasi'); // <-- Halaman Aplikasi Orasy 26
-            const pageProker = document.getElementById('page-proker');
-            
-            const btnHome = document.getElementById('btn-nav-home');
-            const btnProfil = document.getElementById('btn-nav-profil');
-            const btnGaleri = document.getElementById('btn-nav-galeri');
-            const btnAplikasi = document.getElementById('btn-nav-aplikasi'); // <-- Tombol Nav Aplikasi
+    const pageHome = document.getElementById('page-home');
+    const pageProfil = document.getElementById('page-profil');
+    const pageGaleri = document.getElementById('page-galeri');
+    const pageAplikasi = document.getElementById('page-aplikasi');
+    const pageProker = document.getElementById('page-proker');
+    const pageSaranKritik = document.getElementById('page-saran-kritik');
 
-            const subBtns = {
-                ketua: document.getElementById('btn-sub-ketua'),
-                sekretaris: document.getElementById('btn-sub-sekretaris'),
-                bendahara: document.getElementById('btn-sub-bendahara'),
-                divisi1: document.getElementById('btn-sub-divisi1'),
-                divisi2: document.getElementById('btn-sub-divisi2'),
-                divisi3: document.getElementById('btn-sub-divisi3'),
-                divisi4: document.getElementById('btn-sub-divisi4')
-            };
+    const btnHome = document.getElementById('btn-nav-home');
+    const btnProfil = document.getElementById('btn-nav-profil');
+    const btnGaleri = document.getElementById('btn-nav-galeri');
+    const btnAplikasi = document.getElementById('btn-nav-aplikasi');
+    const btnSaranKritik = document.getElementById('btn-nav-saran-kritik');
 
-            Object.values(subBtns).forEach(btn => {
-                if(btn) btn.className = "w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-stone-100 hover:text-stone-900";
-            });
+    const subBtns = {
+        ketua: document.getElementById('btn-sub-ketua'),
+        sekretaris: document.getElementById('btn-sub-sekretaris'),
+        bendahara: document.getElementById('btn-sub-bendahara'),
+        divisi1: document.getElementById('btn-sub-divisi1'),
+        divisi2: document.getElementById('btn-sub-divisi2'),
+        divisi3: document.getElementById('btn-sub-divisi3'),
+        divisi4: document.getElementById('btn-sub-divisi4')
+    };
 
-            const defaultBtnStyle = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]";
-            const activeBtnStyle = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
-
-            // Reset semua tombol nav ke style default
-            btnHome.className = defaultBtnStyle;
-            if(btnProfil) btnProfil.className = defaultBtnStyle;
-            btnGaleri.className = defaultBtnStyle;
-            if(btnAplikasi) btnAplikasi.className = defaultBtnStyle;
-
-            if (pageName === 'home') {
-                pageHome.classList.remove('hidden');
-                pageProfil.classList.add('hidden');
-                pageGaleri.classList.add('hidden');
-                if(pageAplikasi) pageAplikasi.classList.add('hidden');
-                pageProker.classList.add('hidden');
-                btnHome.className = activeBtnStyle;
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (pageName === 'profil') {
-                pageHome.classList.add('hidden');
-                pageProfil.classList.remove('hidden');
-                pageGaleri.classList.add('hidden');
-                if(pageAplikasi) pageAplikasi.classList.add('hidden');
-                pageProker.classList.add('hidden');
-                if(btnProfil) btnProfil.className = activeBtnStyle;
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (pageName === 'galeri') {
-                pageHome.classList.add('hidden');
-                pageProfil.classList.add('hidden');
-                pageGaleri.classList.remove('hidden');
-                if(pageAplikasi) pageAplikasi.classList.add('hidden');
-                pageProker.classList.add('hidden');
-                btnGaleri.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-indigo-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (pageName === 'aplikasi') { // <-- Logika untuk Halaman Aplikasi Orasy 26
-                pageHome.classList.add('hidden');
-                pageProfil.classList.add('hidden');
-                pageGaleri.classList.add('hidden');
-                if(pageAplikasi) pageAplikasi.classList.remove('hidden');
-                pageProker.classList.add('hidden');
-                if(btnAplikasi) btnAplikasi.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-emerald-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (pageName === 'proker') {
-                pageHome.classList.add('hidden');
-                pageProfil.classList.add('hidden');
-                pageGaleri.classList.add('hidden');
-                if(pageAplikasi) pageAplikasi.classList.add('hidden');
-                pageProker.classList.remove('hidden');
-
-                if (subSectionId && subBtns[subSectionId]) {
-                    subBtns[subSectionId].className = "w-full text-left px-3 py-2 rounded-xl font-extrabold text-xs flex items-center gap-2.5 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-sm";
-                    
-                    setTimeout(() => {
-                        const targetEl = document.getElementById(`proker-sec-${subSectionId}`);
-                        if (targetEl) {
-                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }, 100);
-                } else {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            }
-
-            const drawer = document.getElementById('menu-drawer');
-            if(!drawer.classList.contains('-translate-x-full')) {
-                toggleDrawer();
-            }
+    Object.values(subBtns).forEach(btn => {
+        if (btn) {
+            btn.className = "w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-stone-100 hover:text-stone-900";
         }
+    });
+
+    const defaultBtnStyle = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]";
+
+    const activeBtnStyle = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+
+    // Reset semua halaman
+    [
+        pageHome,
+        pageProfil,
+        pageGaleri,
+        pageAplikasi,
+        pageProker,
+        pageSaranKritik
+    ].forEach(page => {
+        if (page) page.classList.add('hidden');
+    });
+
+    // Reset tombol NAV
+    [btnHome, btnProfil, btnGaleri, btnAplikasi, btnSaranKritik].forEach(btn => {
+        if (btn) btn.className = defaultBtnStyle;
+    });
+
+    if (pageName === 'home') {
+        pageHome.classList.remove('hidden');
+        btnHome.className = activeBtnStyle;
+
+    } else if (pageName === 'profil') {
+        pageProfil.classList.remove('hidden');
+        if (btnProfil) btnProfil.className = activeBtnStyle;
+
+    } else if (pageName === 'galeri') {
+        pageGaleri.classList.remove('hidden');
+        btnGaleri.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-indigo-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+
+    } else if (pageName === 'aplikasi') {
+        if (pageAplikasi) pageAplikasi.classList.remove('hidden');
+        if (btnAplikasi) btnAplikasi.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-emerald-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+
+    } else if (pageName === 'saran-kritik') {
+        if (pageSaranKritik) pageSaranKritik.classList.remove('hidden');
+
+        if (btnSaranKritik) {
+            btnSaranKritik.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+        }
+
+    } else if (pageName === 'proker') {
+        pageProker.classList.remove('hidden');
+
+        if (subSectionId && subBtns[subSectionId]) {
+            subBtns[subSectionId].className = "w-full text-left px-3 py-2 rounded-xl font-extrabold text-xs flex items-center gap-2.5 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-sm";
+
+            setTimeout(() => {
+                const targetEl = document.getElementById(`proker-sec-${subSectionId}`);
+                if (targetEl) {
+                    targetEl.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
+        }
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    const drawer = document.getElementById('menu-drawer');
+
+    if (drawer && !drawer.classList.contains('-translate-x-full')) {
+        toggleDrawer();
+    }
+}
 
         function openPhotoModal(imgSrc, name, role, desc, badgeBgClass) {
             const modal = document.getElementById('photo-modal');
