@@ -154,6 +154,59 @@
 </head>
 <body>
 
+    <!-- ==================== WELCOME LANDING INTRO SCREEN ==================== -->
+<div id="welcome-intro-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 sm:p-6 text-center overflow-hidden transition-all duration-700">
+    
+    <!-- BACKGROUND FOTO DENGAN EFEK GELAP TRANSPARAN (AGAR TEKS JELAS & KENCENG) -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://files.catbox.moe/te6m4p.jpg" alt="Background Orasy 26" class="w-full h-full object-cover filter brightness-[0.45] contrast-110 scale-105">
+        <!-- Lapisan gradasi gelap tambahan agar kontras tulisan maksimal -->
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/60 to-stone-950/80 backdrop-blur-[2px]"></div>
+    </div>
+
+    <!-- KONTEN UTAMA DI TENGAH -->
+    <div class="relative z-10 max-w-2xl w-full bg-white/10 backdrop-blur-md p-6 sm:p-10 rounded-3xl border-3 border-white/30 shadow-[0_20px_50px_rgba(0,0,0,0.5)] text-center">
+        
+        <!-- LOGO RESMI ORASY 26 DI TENGAH ATAS -->
+        <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5 rounded-full p-1 bg-amber-300 border-3 border-stone-900 shadow-[4px_4px_0px_#0f172a] flex items-center justify-center overflow-hidden relative group">
+            <img src="https://files.catbox.moe/epjarn.jpg" alt="Logo Orasy 26" class="w-full h-full object-cover rounded-full">
+        </div>
+
+        <!-- Badge Atas -->
+        <div class="inline-block mb-3">
+            <span class="bg-amber-300 text-stone-900 text-xs font-extrabold px-4 py-1.5 rounded-full border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a] uppercase tracking-widest sans-font">
+                ✨ ORASY MAHAD AN-NAHLA AL-ISLAMY 2026/2027
+            </span>
+        </div>
+
+        <!-- Judul Utama (Sangat Jelas & Bagus) -->
+        <h1 class="title-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-wide mb-3 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+            Orasy 26 <br class="hidden sm:inline">Ma'had An-Nahla Al-Islamy
+        </h1>
+
+        <!-- Subtitle Keren -->
+        <p class="text-xs sm:text-sm text-stone-200 font-medium sans-font mb-7 max-w-lg mx-auto leading-relaxed drop-shadow">
+            Wadah resmi organisasi santri & siswa yang mengabdi dengan integritas, bergerak dalam kebersamaan, dan mengukir karya terbaik.
+        </p>
+
+        <!-- Tombol "Go To Beranda" yang Keren & Interaktif -->
+        <button onclick="enterWebsite()" class="w-full sm:w-auto px-8 py-4 bg-amber-400 hover:bg-amber-300 text-stone-900 font-extrabold text-sm sm:text-base rounded-2xl border-3 border-stone-900 shadow-[5px_5px_0px_#0f172a] hover:shadow-[2px_2px_0px_#0f172a] hover:translate-x-1 hover:translate-y-1 transition-all flex items-center justify-center gap-3 mx-auto cursor-pointer sans-font group">
+            <span>🚀</span>
+            <span>MASUK KE BERANDA ORASY 26</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </button>
+
+        <p class="text-[11px] text-stone-300/80 font-bold sans-font mt-4">
+            Ketuk tombol di atas untuk mulai menjelajahi website
+        </p>
+    </div>
+
+    <!-- Footer Kecil di Bawah Intro -->
+    <div class="relative z-10 mt-6 text-stone-400 text-xs font-mono tracking-widest">
+        © 2026 Orasy 26 • Selamat Menikmati Di Website Kami
+    </div>
+</div>
+
     <!-- Splash Screen -->
     <div id="splash-screen" class="fixed inset-0 bg-[#faf7f2] z-50 flex flex-col items-center justify-center p-6 text-center transition-opacity duration-500">
         <div class="max-w-md w-full bg-white p-8 rounded-3xl border-3 border-stone-900 shadow-[8px_8px_0px_#0f172a] relative overflow-hidden">
@@ -1016,6 +1069,166 @@
         </div>
     </div>
 
+<!-- ==================== MENU APLIKASI ORASY 26 ==================== -->
+    <div id="page-aplikasi" class="page-section hidden">
+
+<div id="section-aplikasi-orasy" class="mt-12 pt-8 border-t-3 border-stone-900">
+    <div class="bg-white rounded-3xl border-3 border-stone-900 p-6 sm:p-8 shadow-[6px_6px_0px_#0f172a] relative overflow-hidden sans-font">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-8">
+            <span class="bg-amber-300 text-stone-900 text-xs font-extrabold px-3.5 py-1.5 rounded-full border-2 border-stone-900 shadow-[2px_2px_0px_#0f172a] inline-block uppercase tracking-wider mb-2">
+                📲 OFFICIAL APP & QRIS SUPPORT
+            </span>
+            <h2 class="title-font text-3xl sm:text-4xl font-bold text-stone-900">Aplikasi Website Orasy 26</h2>
+            <p class="text-stone-600 text-xs sm:text-sm font-medium mt-1">Dukung & Akses Platform Resmi Orasy 26 Ma'had An-Nahla Al-Islamy Lengkap Dalam Satu Genggaman</p>
+        </div>
+
+        <!-- FOTO QRIS WEBPAGE (Tengah-Tengah) -->
+        <div class="flex flex-col items-center justify-center mb-8">
+            <div class="relative group cursor-pointer" onclick="openQrisModal()">
+                <!-- Frame QRIS dengan shadow neubrutalism -->
+                <div class="w-60 h-60 sm:w-64 sm:h-64 bg-amber-50 rounded-2xl border-3 border-stone-900 p-3 shadow-[5px_5px_0px_#0f172a] flex flex-col items-center justify-center transition-transform group-hover:scale-[1.02]">
+                    <!-- Ganti link foto di bawah ini nanti kalau foto QRIS sudah disiapkan -->
+                    <img id="qris-image-src" src="https://placehold.co/400x400/facc15/0f172a?text=KLIK+SCAN+QRIS" alt="QRIS Website Orasy 26" class="w-full h-full object-cover rounded-xl border-2 border-stone-900 shadow-sm">
+                    
+                    <!-- Overlay petunjuk klik saat hover -->
+                    <div class="absolute inset-0 bg-stone-900/60 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-2 text-center">
+                        <span class="text-2xl mb-1">🔍</span>
+                        <span class="text-xs font-extrabold uppercase">Klik Untuk Perbesar Foto</span>
+                    </div>
+                </div>
+                
+                <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-[10px] font-extrabold px-3 py-0.5 rounded-full border-2 border-stone-900 shadow-[2px_2px_0px_#0f172a] whitespace-nowrap">
+                    🔍 KLIK UNTUK MEMPERBESAR
+                </span>
+            </div>
+
+            <!-- CAPTION KEREN QRIS -->
+            <div class="mt-5 text-center max-w-lg bg-amber-50 p-4 rounded-2xl border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]">
+                <p class="text-stone-900 font-extrabold text-xs sm:text-sm leading-relaxed">
+                    ✨ <span class="text-red-600">Scan & Wujudkan Sinergi Kebersihan & Karya!</span> QRIS Resmi Website Orasy 26 dapat langsung di-scan untuk mendukung pengembangan platform serta operasional kegiatan santri/siswa Orasy 26.
+                </p>
+            </div>
+        </div>
+
+        <!-- LINK WEBSITES & APLIKASI -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 max-w-3xl mx-auto">
+            <!-- Link Website -->
+            <a href="https://orasy26.vercel.app" target="_blank" class="bg-blue-100 hover:bg-blue-200 text-stone-900 border-2 border-stone-900 p-4 rounded-2xl font-bold text-xs flex items-center justify-between shadow-[3px_3px_0px_#0f172a] transition-transform active:translate-x-0.5 active:translate-y-0.5 group">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">🌐</span>
+                    <div>
+                        <div class="text-xs text-blue-900 font-extrabold uppercase tracking-wider">KUNJUNGI WEBSITE</div>
+                        <div class="text-sm font-extrabold text-stone-900">Website Resmi Orasy 26</div>
+                        <div class="text-[10px] text-stone-600 font-mono font-bold mt-0.5">orasy26.vercel.app</div>
+                    </div>
+                </div>
+                <span class="text-lg font-bold bg-white px-2 py-1 rounded-xl border-2 border-stone-900 shadow-[2px_2px_0px_#0f172a]">↗</span>
+            </a>
+
+            <!-- Link Aplikasi APK -->
+            <a href="https://www.mediafire.com/file/yvspj0tzvs8nia1/Orasy26+Mahad+An-Nahla+Al-Islamy.apk/file" target="_blank" class="bg-emerald-100 hover:bg-emerald-200 text-stone-900 border-2 border-stone-900 p-4 rounded-2xl font-bold text-xs flex items-center justify-between shadow-[3px_3px_0px_#0f172a] transition-transform active:translate-x-0.5 active:translate-y-0.5 group">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">📱</span>
+                    <div>
+                        <div class="text-xs text-emerald-900 font-extrabold uppercase tracking-wider">DOWNLOAD APLIKASI</div>
+                        <div class="text-sm font-extrabold text-stone-900">Aplikasi Website Orasy26 (.APK)</div>
+                        <div class="text-[10px] text-stone-600 font-mono font-bold mt-0.5">MediaFire • Versi Android</div>
+                    </div>
+                </div>
+                <span class="text-lg font-bold bg-white px-2 py-1 rounded-xl border-2 border-stone-900 shadow-[2px_2px_0px_#0f172a]">📥</span>
+            </a>
+        </div>
+
+        <!-- TATA CARA DOWNLOAD APLIKASI ORASY26 -->
+        <div class="bg-stone-50 border-3 border-stone-900 rounded-3xl p-5 sm:p-7 shadow-[4px_4px_0px_#0f172a]">
+            <div class="flex items-center gap-3 mb-6 pb-3 border-b-2 border-stone-900">
+                <span class="text-2xl">⚙️</span>
+                <div>
+                    <h3 class="title-font text-2xl font-bold text-stone-900">Panduan Instalasi & Download Aplikasi</h3>
+                    <p class="text-xs text-stone-600 font-semibold">Ikuti langkah mudah di bawah ini agar aplikasi Orasy 26 dapat terinstall dengan lancar di HP Android kamu:</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 mb-6">
+                <!-- Step 1 -->
+                <div class="bg-white p-3.5 rounded-2xl border-2 border-stone-900 flex items-start gap-3 shadow-[2px_2px_0px_#0f172a]">
+                    <span class="w-7 h-7 rounded-full bg-amber-300 border-2 border-stone-900 flex items-center justify-center font-black text-xs shrink-0 shadow-[1px_1px_0px_#0f172a]">1</span>
+                    <div class="text-xs text-stone-800">
+                        <strong class="block text-stone-900 text-sm mb-0.5">Buka Aplikasi Google Play Store</strong>
+                        Masuk ke aplikasi <b>Google Play Store</b> yang ada di smartphone Android kamu.
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-3.5 rounded-2xl border-2 border-stone-900 flex items-start gap-3 shadow-[2px_2px_0px_#0f172a]">
+                    <span class="w-7 h-7 rounded-full bg-amber-300 border-2 border-stone-900 flex items-center justify-center font-black text-xs shrink-0 shadow-[1px_1px_0px_#0f172a]">2</span>
+                    <div class="text-xs text-stone-800">
+                        <strong class="block text-stone-900 text-sm mb-0.5">Buka Profil & Pengaturan</strong>
+                        Klik foto profil akun Google kamu di <b>Pojok Kanan Atas</b> layar HP.
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-3.5 rounded-2xl border-2 border-stone-900 flex items-start gap-3 shadow-[2px_2px_0px_#0f172a]">
+                    <span class="w-7 h-7 rounded-full bg-amber-300 border-2 border-stone-900 flex items-center justify-center font-black text-xs shrink-0 shadow-[1px_1px_0px_#0f172a]">3</span>
+                    <div class="text-xs text-stone-800">
+                        <strong class="block text-stone-900 text-sm mb-0.5">Pilih Menu "Play Protect"</strong>
+                        Cari dan ketuk menu tulisan <b>Play Protect</b>.
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-3.5 rounded-2xl border-2 border-stone-900 flex items-start gap-3 shadow-[2px_2px_0px_#0f172a]">
+                    <span class="w-7 h-7 rounded-full bg-amber-300 border-2 border-stone-900 flex items-center justify-center font-black text-xs shrink-0 shadow-[1px_1px_0px_#0f172a]">4</span>
+                    <div class="text-xs text-stone-800">
+                        <strong class="block text-stone-900 text-sm mb-0.5">Masuk Pengaturan Play Protect</strong>
+                        Ketuk ikon <b>Roda Gigi ⚙️ (Pengaturan)</b> yang ada di bagian <b>Pojok Kanan Atas</b>.
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-white p-3.5 rounded-2xl border-2 border-stone-900 flex items-start gap-3 shadow-[2px_2px_0px_#0f172a] md:col-span-2">
+                    <span class="w-7 h-7 rounded-full bg-amber-300 border-2 border-stone-900 flex items-center justify-center font-black text-xs shrink-0 shadow-[1px_1px_0px_#0f172a]">5</span>
+                    <div class="text-xs text-stone-800">
+                        <strong class="block text-stone-900 text-sm mb-0.5">Nonaktifkan 2 Opsi Perlindungan</strong>
+                        Geser tombol (matikan) <b>kedua opsi sakelar</b> tersebut agar aplikasi dari luar Play Store dapat di-download & di-install tanpa terblokir otomatis.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jaminan Keamanan -->
+            <div class="bg-emerald-300 border-2 border-stone-900 p-3.5 rounded-2xl text-center shadow-[3px_3px_0px_#0f172a] flex items-center justify-center gap-2">
+                <span class="text-lg">🛡️</span>
+                <span class="text-xs font-black uppercase text-stone-900 tracking-wider">
+                    Jaminan Keamanan: Aplikasi Ini Dijamin 100% Aman & Bebas Malware!
+                </span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Lightbox Modal Box Khusus Foto QRIS (Zoom tanpa pindah halaman) -->
+<div id="qris-modal" class="fixed inset-0 bg-stone-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeQrisModal()">
+    <div class="bg-white rounded-3xl max-w-sm sm:max-w-md w-full p-5 text-center relative shadow-2xl border-3 border-stone-900 overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+        <button onclick="closeQrisModal()" class="absolute top-3 right-3 text-stone-900 hover:bg-stone-100 text-2xl font-bold w-9 h-9 flex items-center justify-center rounded-full border-2 border-stone-900 shadow-[2px_2px_0px_#0f172a] transition-colors z-20">&times;</button>
+        
+        <h3 class="title-font text-2xl font-bold text-stone-900 mb-1">Scan QRIS Orasy 26</h3>
+        <p class="text-[11px] font-bold text-stone-600 sans-font mb-3">Silakan Scan Kode QRIS di Bawah Ini Menggunakan Aplikasi E-Wallet / Mobile Banking Kamu</p>
+        
+        <div class="w-full bg-amber-50 rounded-2xl border-2 border-stone-900 flex items-center justify-center p-3 shadow-inner mb-4">
+            <img id="qris-modal-img" src="https://placehold.co/400x400/facc15/0f172a?text=KLIK+SCAN+QRIS" alt="Foto QRIS Besar" class="w-full h-auto max-h-[55vh] object-contain rounded-xl border-2 border-stone-900">
+        </div>
+
+        <button onclick="closeQrisModal()" class="w-full bg-stone-900 hover:bg-stone-800 text-white text-xs font-extrabold py-3 rounded-xl sans-font border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a] transition-all cursor-pointer">
+            Tutup Tampilan QRIS
+        </button>
+    </div>
+</div>
+</div>
+
         <!-- ==================== HALAMAN 2: TUGAS KERJA & PROKER ==================== -->
         <div id="page-proker" class="page-section hidden">
             <div class="mb-8">
@@ -1703,6 +1916,10 @@
                     <span>🖼️</span> Galery Hasil Dokumentasi
                 </button>
 
+                <button onclick="switchPage('aplikasi')" id="btn-nav-aplikasi" class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
+                  <span>📱</span> Aplikasi Orasy 26
+                </button>
+
                 <!-- KATEGORI JUDUL: TUGAS KERJA & PROKER -->
                 <div class="pt-3 border-t-2 border-stone-200 mt-2">
                     <div class="text-[11px] font-extrabold uppercase tracking-wider text-stone-500 mb-2 px-1 flex items-center gap-1.5">
@@ -1827,11 +2044,13 @@
             const pageHome = document.getElementById('page-home');
             const pageProfil = document.getElementById('page-profil');
             const pageGaleri = document.getElementById('page-galeri');
+            const pageAplikasi = document.getElementById('page-aplikasi'); // <-- Halaman Aplikasi Orasy 26
             const pageProker = document.getElementById('page-proker');
             
             const btnHome = document.getElementById('btn-nav-home');
             const btnProfil = document.getElementById('btn-nav-profil');
             const btnGaleri = document.getElementById('btn-nav-galeri');
+            const btnAplikasi = document.getElementById('btn-nav-aplikasi'); // <-- Tombol Nav Aplikasi
 
             const subBtns = {
                 ketua: document.getElementById('btn-sub-ketua'),
@@ -1850,14 +2069,17 @@
             const defaultBtnStyle = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]";
             const activeBtnStyle = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
 
+            // Reset semua tombol nav ke style default
             btnHome.className = defaultBtnStyle;
             if(btnProfil) btnProfil.className = defaultBtnStyle;
             btnGaleri.className = defaultBtnStyle;
+            if(btnAplikasi) btnAplikasi.className = defaultBtnStyle;
 
             if (pageName === 'home') {
                 pageHome.classList.remove('hidden');
                 pageProfil.classList.add('hidden');
                 pageGaleri.classList.add('hidden');
+                if(pageAplikasi) pageAplikasi.classList.add('hidden');
                 pageProker.classList.add('hidden');
                 btnHome.className = activeBtnStyle;
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1865,6 +2087,7 @@
                 pageHome.classList.add('hidden');
                 pageProfil.classList.remove('hidden');
                 pageGaleri.classList.add('hidden');
+                if(pageAplikasi) pageAplikasi.classList.add('hidden');
                 pageProker.classList.add('hidden');
                 if(btnProfil) btnProfil.className = activeBtnStyle;
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1872,13 +2095,23 @@
                 pageHome.classList.add('hidden');
                 pageProfil.classList.add('hidden');
                 pageGaleri.classList.remove('hidden');
+                if(pageAplikasi) pageAplikasi.classList.add('hidden');
                 pageProker.classList.add('hidden');
                 btnGaleri.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-indigo-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (pageName === 'aplikasi') { // <-- Logika untuk Halaman Aplikasi Orasy 26
+                pageHome.classList.add('hidden');
+                pageProfil.classList.add('hidden');
+                pageGaleri.classList.add('hidden');
+                if(pageAplikasi) pageAplikasi.classList.remove('hidden');
+                pageProker.classList.add('hidden');
+                if(btnAplikasi) btnAplikasi.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-emerald-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else if (pageName === 'proker') {
                 pageHome.classList.add('hidden');
                 pageProfil.classList.add('hidden');
                 pageGaleri.classList.add('hidden');
+                if(pageAplikasi) pageAplikasi.classList.add('hidden');
                 pageProker.classList.remove('hidden');
 
                 if (subSectionId && subBtns[subSectionId]) {
@@ -1956,6 +2189,26 @@
                     window.open(currentActiveImgUrl, '_blank');
                 });
         }
+       function enterWebsite() {
+    const welcomeScreen = document.getElementById('welcome-intro-screen');
+    if (welcomeScreen) {
+        welcomeScreen.style.opacity = '0';
+        welcomeScreen.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+            welcomeScreen.style.display = 'none';
+        }, 600);
+    }
+}
+        // Fungsi Buka & Tutup Modal QRIS
+function openQrisModal() {
+    const qrisSrc = document.getElementById('qris-image-src').src;
+    document.getElementById('qris-modal-img').src = qrisSrc;
+    document.getElementById('qris-modal').classList.remove('hidden');
+}
+
+function closeQrisModal() {
+    document.getElementById('qris-modal').classList.add('hidden');
+}
     </script>
 </body>
 </html>
