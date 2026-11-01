@@ -581,6 +581,817 @@
     }
 }
 </style>
+
+
+<!-- ==========================================
+     ORASY 26 — STATISTIK ORGANISASI
+========================================== -->
+
+<div id="page-statistik" class="hidden">
+  <section class="orasy-stat-page">
+
+    <!-- IDENTITAS ORGANISASI -->
+    <div class="orasy-stat-heading">
+      <div class="orasy-logo">
+        <div class="orasy-logo-inner">
+          <span class="orasy-logo-star">✦</span>
+          <strong>O</strong>
+          <small>26</small>
+        </div>
+      </div>
+
+      <div class="orasy-heading-info">
+        <span class="orasy-eyebrow">MA'HAD AN-NAHLA AL-ISLAMY</span>
+        <h2>ORASY 26</h2>
+        <p>Organisasi Santri • Periode 2026/2027</p>
+        <div class="orasy-heading-status">
+          <span class="orasy-status-dot"></span>
+          Jumlah Kepengurusan
+        </div>
+      </div>
+    </div>
+
+    <!-- INTRO STATISTIK -->
+    <div class="orasy-stat-intro">
+      <span class="orasy-intro-label">JUMLAH DATA</span>
+      <h2>Statistik Pengurus</h2>
+      <p>
+        Informasi jumlah seluruh pengurus
+        ORASY 26 dalam satu periode kepengurusan.
+      </p>
+    </div>
+
+    <!-- TOTAL PENGURUS -->
+    <div class="orasy-total-card">
+      <div class="orasy-total-icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <div>
+        <span>Total Pengurus</span>
+        <h1>31 <small>Orang</small></h1>
+        <p>Pengurus aktif ORASY 26</p>
+      </div>
+      <div class="orasy-total-decoration">31</div>
+    </div>
+
+    <!-- STATISTIK IKHWAN & AKHWAT -->
+    <div class="orasy-stat-grid">
+
+      <div class="orasy-stat-card ikhwan">
+        <div class="orasy-card-top">
+          <div class="orasy-card-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <span>IKHWAN</span>
+        </div>
+        <h2>15</h2>
+        <p>Pengurus Ikhwan</p>
+        <div class="orasy-stat-progress">
+          <div style="width:48.39%"></div>
+        </div>
+        <small>48,4% dari seluruh pengurus</small>
+      </div>
+
+      <div class="orasy-stat-card akhwat">
+        <div class="orasy-card-top">
+          <div class="orasy-card-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <span>AKHWAT</span>
+        </div>
+        <h2>16</h2>
+        <p>Pengurus Akhwat</p>
+        <div class="orasy-stat-progress">
+          <div style="width:51.61%"></div>
+        </div>
+        <small>51,6% dari seluruh pengurus</small>
+      </div>
+
+    </div>
+
+    <!-- KOMPOSISI PENGURUS -->
+    <div class="orasy-composition">
+      <div class="orasy-section-title">
+        <div>
+          <span>DATA JUMLAH</span>
+          <h3>Jumlah Pengurus</h3>
+        </div>
+        <i class="fas fa-chart-pie"></i>
+      </div>
+
+      <div class="orasy-composition-bar">
+        <div class="orasy-bar-ikhwan"></div>
+        <div class="orasy-bar-akhwat"></div>
+      </div>
+
+      <div class="orasy-composition-legend">
+        <span><i class="dot-ikhwan"></i> Ikhwan (15)</span>
+        <span><i class="dot-akhwat"></i> Akhwat (16)</span>
+      </div>
+    </div>
+
+    <!-- KATA-KATA HARI INI -->
+    <div class="orasy-quote-card">
+      <div class="orasy-quote-top">
+        <div class="orasy-quote-symbol">❝</div>
+        <div>
+          <span>DAILY INSPIRATION</span>
+          <h3>Kata-Kata Hari Ini</h3>
+        </div>
+        <div class="orasy-quote-star">✦</div>
+      </div>
+
+      <div class="orasy-quote-content">
+        <h2 id="orasyDailyQuote">
+          Memuat motivasi...
+        </h2>
+      </div>
+
+      <div class="orasy-quote-bottom">
+        <span id="orasyQuoteDate"></span>
+        <span>— ORASY 26</span>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="orasy-stat-footer">
+      <span>✦</span>
+      <p>Bersama Bertumbuh, Bersama Menginspirasi.</p>
+      <span>✦</span>
+    </div>
+
+  </section>
+</div>
+
+<style>
+/* ==========================================
+   ORASY 26 — STATISTIK ORGANISASI STYLE
+========================================== */
+
+#page-statistik {
+  padding: 20px 14px 45px;
+  min-height: 100vh;
+  background: linear-gradient(
+    140deg,#f8fbff,#f5f3ff,#fff5fa,#effaff
+  );
+  background-size: 300% 300%;
+  animation: orasyStatBg 16s ease infinite;
+}
+
+@keyframes orasyStatBg {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.orasy-stat-page {
+  max-width: 950px;
+  margin: auto;
+  position: relative;
+}
+
+/* IDENTITAS ORGANISASI DAN LOGO */
+
+.orasy-stat-heading {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  padding: 23px;
+  margin-bottom: 22px;
+  border: 1px solid #dbeafe;
+  border-radius: 25px;
+  background: linear-gradient(120deg,#ffffff,#f5f3ff,#eff6ff);
+  box-shadow: 0 12px 30px rgba(79,70,229,.09);
+}
+
+.orasy-stat-heading::after {
+  content: "ORASY";
+  position: absolute;
+  right: -10px;
+  bottom: -22px;
+  font-size: 75px;
+  font-weight: 1000;
+  letter-spacing: -5px;
+  color: rgba(99,102,241,.045);
+  pointer-events: none;
+}
+
+.orasy-logo {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 23px;
+  background: linear-gradient(145deg,#2563eb,#7c3aed,#db2777);
+  box-shadow: 0 9px 22px rgba(99,102,241,.28);
+  transform: rotate(-4deg);
+}
+
+.orasy-logo-inner {
+  width: 61px;
+  height: 61px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255,255,255,.8);
+  border-radius: 18px;
+  color: white;
+  background: rgba(255,255,255,.12);
+  transform: rotate(4deg);
+}
+
+.orasy-logo-inner strong {
+  font-size: 30px;
+  line-height: 27px;
+  font-weight: 1000;
+}
+
+.orasy-logo-inner small {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.orasy-logo-star {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 11px;
+  color: #fef08a;
+}
+
+.orasy-heading-info {
+  position: relative;
+  z-index: 1;
+}
+
+.orasy-eyebrow {
+  color: #7c3aed;
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: 1.7px;
+}
+
+.orasy-heading-info h2 {
+  margin: 3px 0;
+  color: #172554;
+  font-size: 27px;
+  font-weight: 1000;
+  letter-spacing: -.8px;
+}
+
+.orasy-heading-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.orasy-heading-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  color: #4338ca;
+  background: #eef2ff;
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.orasy-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #86efac;
+}
+
+/* INTRO STATISTIK */
+
+.orasy-stat-intro {
+  margin: 0 0 19px;
+  padding: 4px 3px;
+}
+
+.orasy-intro-label {
+  color: #8b5cf6;
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: 2px;
+}
+
+.orasy-stat-intro h2 {
+  margin: 5px 0;
+  color: #172554;
+  font-size: 25px;
+  font-weight: 1000;
+}
+
+.orasy-stat-intro p {
+  max-width: 520px;
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* TOTAL PENGURUS */
+
+.orasy-total-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 25px;
+  margin-bottom: 17px;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(115deg,#2563eb,#6366f1,#9333ea);
+  box-shadow: 0 14px 30px rgba(79,70,229,.2);
+}
+
+.orasy-total-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 19px;
+  background: rgba(255,255,255,.2);
+  font-size: 25px;
+}
+
+.orasy-total-card span {
+  font-size: 12px;
+  opacity: .9;
+  font-weight: 700;
+}
+
+.orasy-total-card h1 {
+  margin: 4px 0;
+  font-size: 39px;
+  line-height: 1.1;
+  font-weight: 950;
+}
+
+.orasy-total-card h1 small {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.orasy-total-card p {
+  margin: 0;
+  font-size: 11px;
+  opacity: .85;
+}
+
+.orasy-total-decoration {
+  position: absolute;
+  right: 12px;
+  bottom: -28px;
+  font-size: 110px;
+  font-weight: 950;
+  color: rgba(255,255,255,.09);
+  pointer-events: none;
+}
+
+/* GRID IKHWAN DAN AKHWAT */
+
+.orasy-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 15px;
+  margin-bottom: 17px;
+}
+
+.orasy-stat-card {
+  padding: 19px;
+  border-radius: 23px;
+  background: rgba(255,255,255,.9);
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 0 9px 25px rgba(30,64,175,.07);
+  transition: .35s ease;
+}
+
+.orasy-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(59,130,246,.13);
+}
+
+.orasy-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.orasy-card-top span {
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: 1px;
+}
+
+.orasy-card-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 17px;
+}
+
+.orasy-stat-card h2 {
+  margin: 14px 0 2px;
+  font-size: 38px;
+  font-weight: 950;
+}
+
+.orasy-stat-card p {
+  margin: 0 0 15px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.orasy-stat-card small {
+  display: block;
+  margin-top: 9px;
+  font-size: 10px;
+  color: #64748b;
+}
+
+.ikhwan .orasy-card-icon {
+  color: #2563eb;
+  background: #dbeafe;
+}
+
+.ikhwan .orasy-card-top span,
+.ikhwan h2 {
+  color: #2563eb;
+}
+
+.akhwat .orasy-card-icon {
+  color: #db2777;
+  background: #fce7f3;
+}
+
+.akhwat .orasy-card-top span,
+.akhwat h2 {
+  color: #db2777;
+}
+
+.orasy-stat-progress {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f1f5f9;
+}
+
+.orasy-stat-progress div {
+  height: 100%;
+  border-radius: inherit;
+  animation: orasyProgress 1.5s ease both;
+}
+
+.ikhwan .orasy-stat-progress div {
+  background: linear-gradient(90deg,#60a5fa,#2563eb);
+}
+
+.akhwat .orasy-stat-progress div {
+  background: linear-gradient(90deg,#f9a8d4,#db2777);
+}
+
+@keyframes orasyProgress {
+  from { width: 0; }
+}
+
+/* KOMPOSISI */
+
+.orasy-composition {
+  padding: 21px;
+  margin-bottom: 18px;
+  border: 1px solid #e0e7ff;
+  border-radius: 23px;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 9px 25px rgba(30,64,175,.06);
+}
+
+.orasy-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 19px;
+}
+
+.orasy-section-title span {
+  color: #8b5cf6;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+}
+
+.orasy-section-title h3 {
+  margin: 4px 0 0;
+  color: #172554;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.orasy-section-title > i {
+  color: #8b5cf6;
+  font-size: 23px;
+}
+
+.orasy-composition-bar {
+  display: flex;
+  height: 13px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f1f5f9;
+}
+
+.orasy-bar-ikhwan {
+  width: 48.39%;
+  background: linear-gradient(90deg,#60a5fa,#2563eb);
+}
+
+.orasy-bar-akhwat {
+  width: 51.61%;
+  background: linear-gradient(90deg,#f9a8d4,#db2777);
+}
+
+.orasy-composition-legend {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dot-ikhwan,
+.dot-akhwat {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.dot-akhwat {
+  background: #db2777;
+}
+
+/* MOTIVASI HARIAN */
+
+.orasy-quote-card {
+  position: relative;
+  overflow: hidden;
+  padding: 23px;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(130deg,#312e81,#6d28d9,#9333ea,#db2777);
+  background-size: 200% 200%;
+  animation: orasyQuoteBg 10s ease infinite;
+  box-shadow: 0 14px 30px rgba(109,40,217,.2);
+}
+
+@keyframes orasyQuoteBg {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.orasy-quote-card::after {
+  content: "✦";
+  position: absolute;
+  right: 15px;
+  bottom: -65px;
+  font-size: 160px;
+  color: rgba(255,255,255,.08);
+  pointer-events: none;
+}
+
+.orasy-quote-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.orasy-quote-symbol {
+  font-size: 38px;
+  color: #fce7f3;
+}
+
+.orasy-quote-top span {
+  color: #ddd6fe;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+}
+
+.orasy-quote-top h3 {
+  margin: 3px 0 0;
+  color: white;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.orasy-quote-star {
+  margin-left: auto;
+  color: #fef08a;
+  font-size: 25px;
+  animation: quoteStar 3s ease-in-out infinite;
+}
+
+@keyframes quoteStar {
+  50% { transform: rotate(25deg) scale(1.2); }
+}
+
+.orasy-quote-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.orasy-quote-content h2 {
+  margin: 0;
+  color: white;
+  font-size: clamp(19px,3vw,26px);
+  font-weight: 850;
+  line-height: 1.55;
+  animation: quoteFade .7s ease;
+}
+
+@keyframes quoteFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.orasy-quote-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  color: #e9d5ff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* FOOTER */
+
+.orasy-stat-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 23px 5px 5px;
+  color: #7c3aed;
+  text-align: center;
+}
+
+.orasy-stat-footer span {
+  color: #ec4899;
+}
+
+.orasy-stat-footer p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:480px) {
+  #page-statistik {
+    padding: 13px 10px 35px;
+  }
+
+  .orasy-stat-heading {
+    gap: 13px;
+    padding: 17px;
+  }
+
+  .orasy-logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+  }
+
+  .orasy-logo-inner {
+    width: 53px;
+    height: 53px;
+  }
+
+  .orasy-heading-info h2 {
+    font-size: 23px;
+  }
+
+  .orasy-eyebrow {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .orasy-stat-intro h2 {
+    font-size: 22px;
+  }
+
+  .orasy-stat-grid {
+    gap: 10px;
+  }
+
+  .orasy-stat-card {
+    padding: 14px;
+  }
+
+  .orasy-total-card {
+    padding: 20px;
+  }
+
+  .orasy-quote-card {
+    padding: 19px;
+  }
+}
+
+/* AKSESIBILITAS ANIMASI */
+
+@media(prefers-reduced-motion:reduce) {
+  #page-statistik,
+  #page-statistik *,
+  #page-statistik::before,
+  #page-statistik::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  const quotes = [
+    "Pemimpin hebat bukan yang paling berkuasa, tetapi yang mampu membawa orang lain tumbuh bersama.",
+    "Jangan menunggu kesempatan datang, ciptakan kesempatan dengan kerja keras dan keberanian.",
+    "Organisasi yang kuat dibangun dari kebersamaan, kepercayaan, dan tanggung jawab.",
+    "Satu langkah kecil hari ini bisa menjadi perubahan besar di masa depan.",
+    "Kesuksesan bukan tentang siapa yang paling hebat, tetapi siapa yang mau terus belajar.",
+    "Jadilah alasan seseorang tetap semangat untuk berjuang dan berkembang.",
+    "Perbedaan bukan alasan untuk terpecah, tetapi kesempatan untuk saling melengkapi.",
+    "Tanggung jawab bukan beban, melainkan kesempatan untuk membuktikan kemampuan.",
+    "Kerja sama membuat hal yang sulit menjadi lebih mudah untuk dicapai.",
+    "Jangan takut mencoba hal baru. Setiap pengalaman adalah pelajaran berharga.",
+    "Pemimpin bukan hanya memberi arahan, tetapi juga memberi teladan.",
+    "Kebersamaan adalah kekuatan terbesar dalam sebuah organisasi.",
+    "Tidak harus sempurna untuk memulai, tetapi harus berani untuk terus berkembang.",
+    "Disiplin hari ini adalah bekal untuk meraih keberhasilan esok hari.",
+    "Berikan yang terbaik, bukan karena ingin dipuji, tetapi karena itu tanggung jawabmu.",
+    "Saling menghargai adalah awal dari organisasi yang harmonis.",
+    "Jangan hanya menjadi bagian dari organisasi, jadilah bagian dari perubahan.",
+    "Kesempatan terbaik untuk berkembang adalah saat kita berani mengambil tanggung jawab.",
+    "Tetap rendah hati saat berhasil dan tetap kuat saat menghadapi kesulitan.",
+    "Bersama kita belajar, bersama kita bergerak, bersama kita bertumbuh."
+  ];
+
+  function updateOrasyQuote() {
+    const quoteElement = document.getElementById("orasyDailyQuote");
+    const dateElement = document.getElementById("orasyQuoteDate");
+
+    if (!quoteElement || !dateElement) return;
+
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const dayOfYear = Math.floor((now - start) / 86400000);
+
+    const yearOffset = now.getFullYear() * 7;
+    const quoteIndex = (dayOfYear + yearOffset) % quotes.length;
+
+    quoteElement.textContent = "“" + quotes[quoteIndex] + "”";
+
+    dateElement.textContent = now.toLocaleDateString("id-ID", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+  }
+
+  updateOrasyQuote();
+})();
+</script>
+
         
         <!-- ==================== HALAMAN 1: HOME / STRUKTUR ORGANISASI ==================== -->
         <div id="page-home" class="page-section">
@@ -1018,6 +1829,641 @@
                 </div>
             </div>
         </div>
+
+        
+<style>
+/* ==========================================
+   ORASY 26 — ULTIMATE PREMIUM ANIMATION
+========================================== */
+
+#page-home {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg, #f8fbff, #f5f3ff, #fff5fa, #effaff
+  );
+  background-size: 300% 300%;
+  animation: orasyBackground 18s ease infinite;
+}
+
+@keyframes orasyBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* AURA BACKGROUND */
+#page-home::before,
+#page-home::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(65px);
+}
+
+#page-home::before {
+  width: 350px;
+  height: 350px;
+  top: 5%;
+  left: -120px;
+  background: rgba(96,165,250,.25);
+  animation: auraFloatOne 12s ease-in-out infinite alternate;
+}
+
+#page-home::after {
+  width: 400px;
+  height: 400px;
+  right: -140px;
+  top: 40%;
+  background: rgba(244,114,182,.22);
+  animation: auraFloatTwo 15s ease-in-out infinite alternate;
+}
+
+@keyframes auraFloatOne {
+  to { transform: translate(150px,120px) scale(1.4); }
+}
+
+@keyframes auraFloatTwo {
+  to { transform: translate(-140px,-100px) scale(1.3); }
+}
+
+/* BINTANG */
+#page-home .orasy-stars {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#page-home .orasy-stars span {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 8px #60a5fa, 0 0 18px #a78bfa;
+  animation: starFloat 7s ease-in-out infinite;
+}
+
+@keyframes starFloat {
+  0%,100% {
+    opacity: .2;
+    transform: translateY(0) scale(.6);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-25px) scale(1.5);
+  }
+}
+
+/* ==========================================
+   HEADING STRUKTUR — PREMIUM FRAME
+========================================== */
+
+#page-home .flex.items-center.gap-3.mb-8 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 19px 22px !important;
+  border: 2px solid transparent !important;
+  border-radius: 23px !important;
+
+  background:
+    linear-gradient(120deg,#fff,#f0f9ff,#fdf2f8,#f5f3ff) padding-box,
+    linear-gradient(
+      110deg,
+      #60a5fa,
+      #a78bfa,
+      #f472b6,
+      #22d3ee,
+      #60a5fa
+    ) border-box !important;
+
+  background-size: 100% 100%, 300% 300% !important;
+
+  animation:
+    headingBorderMove 7s linear infinite,
+    headingGradient 9s ease infinite;
+
+  box-shadow:
+    0 12px 30px rgba(30,64,175,.09),
+    0 0 20px rgba(167,139,250,.12),
+    inset 0 1px 0 #fff;
+}
+
+@keyframes headingBorderMove {
+  to { background-position: 0 0, 300% 50%; }
+}
+
+@keyframes headingGradient {
+  0%,100% { filter: brightness(1); }
+  50% { filter: brightness(1.06); }
+}
+
+/* Garis dekorasi bawah judul */
+#page-home .flex.items-center.gap-3.mb-8::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 84%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,transparent,#60a5fa,#a78bfa,#f472b6,transparent
+  );
+  background-size: 200% 100%;
+  animation: headingLine 4s linear infinite;
+}
+
+@keyframes headingLine {
+  to { background-position: 200% 0; }
+}
+
+/* Kilauan melintas pada heading */
+#page-home .flex.items-center.gap-3.mb-8::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -60%;
+  width: 35%;
+  height: 300%;
+  transform: rotate(25deg);
+  background: linear-gradient(
+    90deg,transparent,rgba(255,255,255,.85),transparent
+  );
+  animation: headingShine 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes headingShine {
+  0%,55% { left: -60%; }
+  100% { left: 140%; }
+}
+
+/* Ikon heading */
+#page-home .flex.items-center.gap-3.mb-8 > div:first-child {
+  animation: headingPulse 3s ease-in-out infinite;
+}
+
+@keyframes headingPulse {
+  0%,100% {
+    box-shadow: 0 0 0 4px rgba(96,165,250,.12),
+                0 0 12px rgba(96,165,250,.2);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(244,114,182,.12),
+                0 0 22px rgba(244,114,182,.3);
+  }
+}
+
+/* JUDUL BERWARNA */
+#page-home h2.title-font {
+  background: linear-gradient(
+    90deg,#2563eb,#8b5cf6,#ec4899,#2563eb
+  );
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleColorMove 6s linear infinite;
+  font-weight: 950 !important;
+}
+
+@keyframes titleColorMove {
+  to { background-position: 250% center; }
+}
+
+/* ==========================================
+   KARTU ANGGOTA
+========================================== */
+
+#page-home .card-node {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden !important;
+  border: 1px solid rgba(147,197,253,.6) !important;
+  border-radius: 25px !important;
+
+  background: linear-gradient(
+    145deg,#fff 0%,#f8fbff 55%,#fff7fb 100%
+  ) !important;
+
+  box-shadow:
+    0 10px 28px rgba(59,130,246,.09),
+    0 0 0 1px rgba(255,255,255,.9),
+    0 0 20px rgba(167,139,250,.08) !important;
+
+  transition:
+    box-shadow .4s ease,
+    border-color .4s ease !important;
+}
+
+/* Cahaya melintas */
+#page-home .card-node::before {
+  content: "";
+  position: absolute;
+  inset: -100% -70%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 42%,
+    rgba(255,255,255,.75) 50%,
+    rgba(147,197,253,.2) 53%,
+    transparent 60%
+  );
+  transform: translateX(-80%) rotate(15deg);
+  animation: cardLightSweep 7s ease-in-out infinite;
+}
+
+@keyframes cardLightSweep {
+  0%,55% { transform: translateX(-80%) rotate(15deg); }
+  100% { transform: translateX(80%) rotate(15deg); }
+}
+
+/* Glow latar kartu */
+#page-home .card-node::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 10% 0%,rgba(96,165,250,.13),transparent 40%),
+    radial-gradient(circle at 100% 100%,rgba(244,114,182,.12),transparent 40%);
+}
+
+/* Floating kartu */
+#page-home .card-node.orasy-visible {
+  animation: orasyCardFloat 5s ease-in-out infinite alternate;
+}
+
+#page-home .card-node.orasy-visible:nth-child(2n) {
+  animation-delay: -2s;
+}
+
+#page-home .card-node.orasy-visible:nth-child(3n) {
+  animation-delay: -3.5s;
+}
+
+@keyframes orasyCardFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+/* Hover kartu */
+#page-home .card-node:hover {
+  animation-play-state: paused;
+  transform: translateY(-8px) scale(1.012) !important;
+  border-color: #a78bfa !important;
+  box-shadow:
+    0 20px 40px rgba(59,130,246,.18),
+    0 0 25px rgba(167,139,250,.2),
+    0 0 45px rgba(244,114,182,.12) !important;
+}
+
+#page-home .card-node:active {
+  transform: scale(.985) !important;
+}
+
+/* FOTO */
+#page-home .card-node img {
+  position: relative;
+  border: 3px solid white !important;
+  border-radius: 20px;
+  box-shadow:
+    0 0 0 2px rgba(148,163,184,.4),
+    0 8px 20px rgba(15,23,42,.14);
+  animation: photoGlow 4s ease-in-out infinite alternate;
+  transition: transform .5s ease, box-shadow .4s ease;
+}
+
+@keyframes photoGlow {
+  from {
+    box-shadow: 0 0 0 2px rgba(147,197,253,.5),
+                0 8px 20px rgba(59,130,246,.1);
+  }
+  to {
+    box-shadow: 0 0 0 3px rgba(192,132,252,.6),
+                0 0 22px rgba(244,114,182,.25);
+  }
+}
+
+#page-home .card-node:hover img {
+  transform: scale(1.06) rotate(2deg);
+}
+
+/* ==========================================
+   BADGE JABATAN — DIPERJELAS
+========================================== */
+
+#page-home .card-node > div[class*="absolute"][class*="-top"] {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 30px !important;
+
+  margin: 0 auto 14px !important;
+  padding: 7px 15px !important;
+
+  border: 1px solid rgba(255,255,255,.8) !important;
+  border-radius: 30px !important;
+
+  background: linear-gradient(
+    110deg,#2563eb,#7c3aed,#db2777
+  ) !important;
+
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 950 !important;
+  letter-spacing: 1px !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 5 !important;
+
+  box-shadow:
+    0 5px 14px rgba(37,99,235,.25),
+    0 0 18px rgba(167,139,250,.2) !important;
+
+  animation: badgeShine 3s ease-in-out infinite;
+}
+
+@keyframes badgeShine {
+  0%,100% { filter: brightness(1); }
+  50% { filter: brightness(1.18); }
+}
+
+/* NAMA PENGURUS */
+#page-home .card-node h3,
+#page-home .card-node h4 {
+  position: relative;
+  z-index: 3;
+  color: #172554 !important;
+  font-size: 18px !important;
+  font-weight: 950 !important;
+  line-height: 1.45 !important;
+  text-align: center;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  text-shadow: 0 2px 8px rgba(37,99,235,.1);
+}
+
+#page-home .card-node:hover h3,
+#page-home .card-node:hover h4 {
+  color: #2563eb !important;
+}
+
+/* DESKRIPSI */
+#page-home .card-node p {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  line-height: 1.6 !important;
+}
+
+#page-home .card-node > p:last-child {
+  border: 1px solid #dbeafe !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg,#f8fafc,#eff6ff) !important;
+  box-shadow: inset 0 1px 3px rgba(15,23,42,.03);
+}
+
+/* ==========================================
+   GARIS STRUKTUR ORGANISASI
+========================================== */
+
+#page-home .tree-line-v,
+#page-home .tree-line-ak-v {
+  width: 2px;
+  position: relative;
+  overflow: hidden;
+  background: #dbeafe !important;
+}
+
+#page-home .tree-line-v::after,
+#page-home .tree-line-ak-v::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(
+    to bottom,transparent,#60a5fa,#c084fc,transparent
+  );
+  animation: lineFlow 2.8s linear infinite;
+}
+
+@keyframes lineFlow {
+  to { top: 150%; }
+}
+
+#page-home .tree-line-h,
+#page-home .tree-line-ak-h {
+  height: 2px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,transparent,#bfdbfe 15%,#c4b5fd 50%,#fbcfe8 85%,transparent
+  ) !important;
+}
+
+#page-home .tree-line-h::after,
+#page-home .tree-line-ak-h::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg,transparent,#fff,#93c5fd,transparent);
+  animation: horizontalFlow 3s linear infinite;
+}
+
+@keyframes horizontalFlow {
+  to { left: 110%; }
+}
+
+/* PEMBATAS IKHWAN DAN AKHWAT */
+#page-home hr {
+  height: 2px;
+  border: 0;
+  background: linear-gradient(
+    90deg,transparent,#93c5fd,#c084fc,#f9a8d4,transparent
+  );
+  background-size: 200% 100%;
+  animation: dividerMove 5s linear infinite;
+}
+
+@keyframes dividerMove {
+  to { background-position: 200% 0; }
+}
+
+/* ==========================================
+   SCROLL REVEAL — MUNCUL BERTAHAP
+========================================== */
+
+#page-home .card-node.orasy-reveal {
+  opacity: 0 !important;
+  visibility: hidden;
+  transform: translateY(48px) scale(.95) !important;
+  filter: blur(6px);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.16,1,.3,1),
+    filter .75s ease,
+    visibility .75s ease !important;
+}
+
+#page-home .card-node.orasy-reveal.orasy-visible {
+  opacity: 1 !important;
+  visibility: visible;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0);
+  transition-delay: 0s !important;
+}
+
+#page-home .card-node.orasy-reveal.orasy-visible:hover {
+  transform: translateY(-8px) scale(1.012) !important;
+}
+
+/* ==========================================
+   GRID DAN RESPONSIVE
+========================================== */
+
+#page-home .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+  align-items: stretch;
+  gap: 23px;
+}
+
+#page-home .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 > div {
+  min-width: 0;
+}
+
+@media(max-width:640px) {
+  #page-home .flex.items-center.gap-3.mb-8 {
+    padding: 15px !important;
+    border-radius: 20px !important;
+  }
+
+  #page-home h2.title-font {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  #page-home .card-node {
+    border-radius: 20px !important;
+  }
+
+  #page-home .card-node h3,
+  #page-home .card-node h4 {
+    font-size: 16px !important;
+  }
+
+  #page-home .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+    gap: 17px;
+  }
+
+  #page-home::before {
+    width: 230px;
+    height: 230px;
+  }
+
+  #page-home::after {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce) {
+  #page-home,
+  #page-home *,
+  #page-home::before,
+  #page-home::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const page = document.querySelector("#page-home");
+  if (!page) return;
+
+  /* BINTANG OTOMATIS */
+  if (!page.querySelector(".orasy-stars")) {
+    const stars = document.createElement("div");
+    stars.className = "orasy-stars";
+    stars.setAttribute("aria-hidden", "true");
+
+    for (let i = 0; i < 24; i++) {
+      const star = document.createElement("span");
+      const size = 2 + Math.random() * 4;
+
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.animationDelay = Math.random() * 7 + "s";
+      star.style.animationDuration = (5 + Math.random() * 6) + "s";
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+
+      stars.appendChild(star);
+    }
+
+    page.prepend(stars);
+  }
+
+  /* SCROLL REVEAL KARTU */
+  const cards = page.querySelectorAll(".card-node");
+
+  cards.forEach(card => {
+    card.classList.add("orasy-reveal");
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    cards.forEach(card => card.classList.add("orasy-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("orasy-visible");
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
+  });
+
+  cards.forEach((card, index) => {
+    card.style.transitionDelay = Math.min(index % 4, 3) * 100 + "ms";
+    observer.observe(card);
+  });
+});
+</script>
+
 
         <!-- ==================== HALAMAN PROFIL ORASY 26 ==================== -->
         <div id="page-profil" class="page-section hidden">
@@ -2881,99 +4327,172 @@
         </div>
     </div>
 
-    <!-- SIDE DRAWER NAVIGATION MENU -->
-    <div id="drawer-backdrop" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300" onclick="toggleDrawer()"></div>
     
-    <div id="menu-drawer" class="fixed top-0 left-0 bottom-0 w-72 sm:w-80 bg-white border-r-4 border-stone-900 z-50 transform -translate-x-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+<!-- SIDE DRAWER NAVIGATION MENU -->
+
+<div id="drawer-backdrop"
+  class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"
+  onclick="toggleDrawer()">
+</div>
+
+<div id="menu-drawer"
+  class="fixed top-0 left-0 bottom-0 w-72 sm:w-80 bg-white border-r-4 border-stone-900 z-50 transform -translate-x-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+
+  <div>
+    <!-- HEADER DRAWER -->
+    <div class="flex items-center justify-between border-b-3 border-stone-900 pb-4 mb-5">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-amber-300 border-2 border-stone-900 flex items-center justify-center font-bold text-stone-900 title-font text-lg shadow-[2px_2px_0px_#0f172a]">
+          26
+        </div>
         <div>
-            <!-- Header Drawer -->
-            <div class="flex items-center justify-between border-b-3 border-stone-900 pb-4 mb-5">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-amber-300 border-2 border-stone-900 flex items-center justify-center font-bold text-stone-900 title-font text-lg shadow-[2px_2px_0px_#0f172a]">
-                        26
-                    </div>
-                    <div>
-                        <h3 class="title-font font-bold text-xl text-stone-900 leading-none">ORASY 26</h3>
-                        <span class="text-[10px] sans-font font-extrabold uppercase text-red-600 tracking-wider">FITURE MENU</span>
-                    </div>
-                </div>
-                <button onclick="toggleDrawer()" class="w-8 h-8 rounded-full bg-stone-100 border-2 border-stone-900 flex items-center justify-center text-stone-900 font-bold text-lg hover:bg-stone-200 shadow-[2px_2px_0px_#0f172a]">
-                    &times;
-                </button>
-            </div>
-
-            <!-- Daftar Menu Samping -->
-            <nav class="space-y-3 sans-font">
-                
-                <div class="text-[11px] font-extrabold uppercase tracking-wider text-stone-500 mb-1 px-1">
-                    MENU UTAMA
-                </div>
-
-                <!-- MENU 1: HOME -->
-                <button onclick="switchPage('home')" id="btn-nav-home" class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]">
-                    <span>🏠</span> Beranda (Struktur Orasy)
-                </button>
-
-                <!-- MENU 2: PROFIL ORASY 26 -->
-                <button onclick="switchPage('profil')" id="btn-nav-profil" class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
-                    <span>👤</span> Profil Orasy 26
-                </button>
-
-                <!-- MENU 3: GALERY HASIL DOKUMENTASI -->
-                <button onclick="switchPage('galeri')" id="btn-nav-galeri" class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
-                    <span>🖼️</span> Galery Hasil Dokumentasi
-                </button>
-
-                <button onclick="switchPage('aplikasi')" id="btn-nav-aplikasi" class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
-                  <span>📱</span> Aplikasi Orasy 26
-                </button>
-
-                <button id="btn-nav-saran-kritik"
-    onclick="switchPage('saran-kritik')"
-    class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
-
-    <span>💬</span>
-    <span>Saran & Kritik</span>
-</button>
-
-                <!-- KATEGORI JUDUL: TUGAS KERJA & PROKER -->
-                <div class="pt-3 border-t-2 border-stone-200 mt-2">
-                    <div class="text-[11px] font-extrabold uppercase tracking-wider text-stone-500 mb-2 px-1 flex items-center gap-1.5">
-                        <span>📋</span> TUGAS KERJA & PROKER
-                    </div>
-                    
-                    <div class="space-y-1.5 pl-2 border-l-3 border-amber-400 ml-2">
-                        <button onclick="switchPage('proker', 'ketua')" id="btn-sub-ketua" class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-amber-100 hover:text-stone-900">
-                            <span>👑</span> A. Ketua & Wakil
-                        </button>
-                        <button onclick="switchPage('proker', 'sekretaris')" id="btn-sub-sekretaris" class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-purple-100 hover:text-stone-900">
-                            <span>📝</span> B. Sekretaris
-                        </button>
-                        <button onclick="switchPage('proker', 'bendahara')" id="btn-sub-bendahara" class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-emerald-100 hover:text-stone-900">
-                            <span>💰</span> C. Bendahara
-                        </button>
-                        <button onclick="switchPage('proker', 'divisi1')" id="btn-sub-divisi1" class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-blue-100 hover:text-stone-900">
-                            <span>📖</span> D. Divisi 1 (Pendidikan)
-                        </button>
-                        <button onclick="switchPage('proker', 'divisi2')" id="btn-sub-divisi2" class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-purple-100 hover:text-stone-900">
-                            <span>🛡️</span> E. Divisi 2 (Kedisiplinan)
-                        </button>
-                        <button onclick="switchPage('proker', 'divisi3')" id="btn-sub-divisi3" class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-teal-100 hover:text-stone-900">
-                            <span>💻</span> F. Divisi 3 (Kominfo)
-                        </button>
-                        <button onclick="switchPage('proker', 'divisi4')" id="btn-sub-divisi4" class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-sky-100 hover:text-stone-900">
-                            <span>🧹</span> G. Divisi 4 (Kebersihan)
-                        </button>
-                    </div>
-                </div>
-
-            </nav>
+          <h3 class="title-font font-bold text-xl text-stone-900 leading-none">ORASY 26</h3>
+          <span class="text-[10px] sans-font font-extrabold uppercase text-red-600 tracking-wider">FITURE MENU</span>
         </div>
+      </div>
 
-        <div class="bg-amber-100 p-3 rounded-2xl border-2 border-stone-900 text-[11px] text-stone-800 sans-font font-bold italic mt-4 shadow-[2px_2px_0px_#0f172a]">
-            📌 Klik menu di atas untuk navigasi halaman interaktif.
-        </div>
+      <button onclick="toggleDrawer()"
+        class="w-8 h-8 rounded-full bg-stone-100 border-2 border-stone-900 flex items-center justify-center text-stone-900 font-bold text-lg hover:bg-stone-200 shadow-[2px_2px_0px_#0f172a]">
+        &times;
+      </button>
     </div>
+
+    <!-- DAFTAR MENU -->
+    <nav class="space-y-3 sans-font">
+
+      <div class="text-[11px] font-extrabold uppercase tracking-wider text-stone-500 mb-1 px-1">
+        MENU UTAMA
+      </div>
+
+      <!-- STATISTIK: AKTIF DEFAULT -->
+      <button id="btn-nav-statistik"
+        onclick="switchPage('statistik')"
+        class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]">
+        <i class="fas fa-chart-pie"></i>
+        <span>📊</span> Jumlah & Motivasi
+      </button>
+
+      <!-- BERANDA / STRUKTUR ORASY -->
+      <button onclick="switchPage('home')" id="btn-nav-home"
+        class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
+        <span>🏠</span> Struktur Orasy 2026-2027
+      </button>
+
+      <!-- PROFIL -->
+      <button onclick="switchPage('profil')" id="btn-nav-profil"
+        class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
+        <span>👤</span> Profil Orasy 26
+      </button>
+
+      <!-- GALERI -->
+      <button onclick="switchPage('galeri')" id="btn-nav-galeri"
+        class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
+        <span>🖼️</span> Galery Hasil Dokumentasi
+      </button>
+
+      <!-- APLIKASI -->
+      <button onclick="switchPage('aplikasi')" id="btn-nav-aplikasi"
+        class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
+        <span>📱</span> Aplikasi Orasy 26
+      </button>
+
+      <!-- SARAN DAN KRITIK -->
+      <button id="btn-nav-saran-kritik"
+        onclick="switchPage('saran-kritik')"
+        class="w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-stone-50 text-stone-800 border-2 border-stone-900 hover:bg-stone-100 shadow-[3px_3px_0px_#0f172a]">
+        <span>💬</span>
+        <span>Saran & Kritik</span>
+      </button>
+
+      <!-- TUGAS KERJA DAN PROKER -->
+      <div class="pt-3 border-t-2 border-stone-200 mt-2">
+        <div class="text-[11px] font-extrabold uppercase tracking-wider text-stone-500 mb-2 px-1 flex items-center gap-1.5">
+          <span>📋</span> TUGAS KERJA & PROKER
+        </div>
+
+        <div class="space-y-1.5 pl-2 border-l-3 border-amber-400 ml-2">
+
+          <button onclick="switchPage('proker', 'ketua')" id="btn-sub-ketua"
+            class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-amber-100 hover:text-stone-900">
+            <span>👑</span> A. Ketua & Wakil
+          </button>
+
+          <button onclick="switchPage('proker', 'sekretaris')" id="btn-sub-sekretaris"
+            class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-purple-100 hover:text-stone-900">
+            <span>📝</span> B. Sekretaris
+          </button>
+
+          <button onclick="switchPage('proker', 'bendahara')" id="btn-sub-bendahara"
+            class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-emerald-100 hover:text-stone-900">
+            <span>💰</span> C. Bendahara
+          </button>
+
+          <button onclick="switchPage('proker', 'divisi1')" id="btn-sub-divisi1"
+            class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-blue-100 hover:text-stone-900">
+            <span>📖</span> D. Divisi 1 (Pendidikan)
+          </button>
+
+          <button onclick="switchPage('proker', 'divisi2')" id="btn-sub-divisi2"
+            class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-purple-100 hover:text-stone-900">
+            <span>🛡️</span> E. Divisi 2 (Kedisiplinan)
+          </button>
+
+          <button onclick="switchPage('proker', 'divisi3')" id="btn-sub-divisi3"
+            class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-teal-100 hover:text-stone-900">
+            <span>💻</span> F. Divisi 3 (Kominfo)
+          </button>
+
+          <button onclick="switchPage('proker', 'divisi4')" id="btn-sub-divisi4"
+            class="w-full text-left px-3 py-2 rounded-xl font-bold text-xs flex items-center gap-2.5 transition-all text-stone-700 hover:bg-sky-100 hover:text-stone-900">
+            <span>🧹</span> G. Divisi 4 (Kebersihan)
+          </button>
+
+        </div>
+      </div>
+
+    </nav>
+  </div>
+
+  <!-- FOOTER DRAWER -->
+  <div class="bg-amber-100 p-3 rounded-2xl border-2 border-stone-900 text-[11px] text-stone-800 sans-font font-bold italic mt-4 shadow-[2px_2px_0px_#0f172a]">
+    📌 Klik menu di atas untuk navigasi halaman interaktif.
+  </div>
+
+</div>
+
+<!-- ==========================================
+     HALAMAN AWAL: STATISTIK & MOTIVASI
+========================================== -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Sembunyikan semua halaman terlebih dahulu.
+  const pageIds = [
+    "page-home",
+    "page-profil",
+    "page-galeri",
+    "page-aplikasi",
+    "page-proker",
+    "page-saran-kritik",
+    "page-statistik"
+  ];
+
+  pageIds.forEach(function(id) {
+    const page = document.getElementById(id);
+    if (page) page.classList.add("hidden");
+  });
+
+  // Tampilkan statistik sebagai halaman pertama.
+  if (typeof switchPage === "function") {
+    switchPage("statistik");
+  } else {
+    const statistik = document.getElementById("page-statistik");
+    if (statistik) statistik.classList.remove("hidden");
+  }
+
+});
+</script>
 
     <!-- Modal Lightbox (Foto Pengurus Organisasi) -->
     <div id="photo-modal" class="fixed inset-0 bg-stone-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-3 sm:p-4 transition-opacity duration-300" onclick="closePhotoModal()">
@@ -3056,8 +4575,10 @@
             }
         }
 
-        function switchPage(pageName, subSectionId = null) {
+        
+function switchPage(pageName, subSectionId = null) {
     const pageHome = document.getElementById('page-home');
+    const pageStatistik = document.getElementById('page-statistik');
     const pageProfil = document.getElementById('page-profil');
     const pageGaleri = document.getElementById('page-galeri');
     const pageAplikasi = document.getElementById('page-aplikasi');
@@ -3065,6 +4586,7 @@
     const pageSaranKritik = document.getElementById('page-saran-kritik');
 
     const btnHome = document.getElementById('btn-nav-home');
+    const btnStatistik = document.getElementById('btn-nav-statistik');
     const btnProfil = document.getElementById('btn-nav-profil');
     const btnGaleri = document.getElementById('btn-nav-galeri');
     const btnAplikasi = document.getElementById('btn-nav-aplikasi');
@@ -3090,9 +4612,10 @@
 
     const activeBtnStyle = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
 
-    // Reset semua halaman
+    // RESET SEMUA HALAMAN
     [
         pageHome,
+        pageStatistik,
         pageProfil,
         pageGaleri,
         pageAplikasi,
@@ -3102,27 +4625,53 @@
         if (page) page.classList.add('hidden');
     });
 
-    // Reset tombol NAV
-    [btnHome, btnProfil, btnGaleri, btnAplikasi, btnSaranKritik].forEach(btn => {
+    // RESET SEMUA TOMBOL NAV
+    [
+        btnHome,
+        btnStatistik,
+        btnProfil,
+        btnGaleri,
+        btnAplikasi,
+        btnSaranKritik
+    ].forEach(btn => {
         if (btn) btn.className = defaultBtnStyle;
     });
 
+    // BERANDA
     if (pageName === 'home') {
-        pageHome.classList.remove('hidden');
-        btnHome.className = activeBtnStyle;
+        if (pageHome) pageHome.classList.remove('hidden');
+        if (btnHome) btnHome.className = activeBtnStyle;
 
+    // STATISTIK & MOTIVASI
+    } else if (pageName === 'statistik') {
+        if (pageStatistik) pageStatistik.classList.remove('hidden');
+
+        if (btnStatistik) {
+            btnStatistik.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-purple-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+        }
+
+    // PROFIL
     } else if (pageName === 'profil') {
-        pageProfil.classList.remove('hidden');
+        if (pageProfil) pageProfil.classList.remove('hidden');
         if (btnProfil) btnProfil.className = activeBtnStyle;
 
+    // GALERI
     } else if (pageName === 'galeri') {
-        pageGaleri.classList.remove('hidden');
-        btnGaleri.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-indigo-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+        if (pageGaleri) pageGaleri.classList.remove('hidden');
 
+        if (btnGaleri) {
+            btnGaleri.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-indigo-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+        }
+
+    // APLIKASI ORASY 26
     } else if (pageName === 'aplikasi') {
         if (pageAplikasi) pageAplikasi.classList.remove('hidden');
-        if (btnAplikasi) btnAplikasi.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-emerald-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
 
+        if (btnAplikasi) {
+            btnAplikasi.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-emerald-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
+        }
+
+    // SARAN & KRITIK
     } else if (pageName === 'saran-kritik') {
         if (pageSaranKritik) pageSaranKritik.classList.remove('hidden');
 
@@ -3130,14 +4679,16 @@
             btnSaranKritik.className = "w-full text-left px-4 py-3 rounded-2xl font-extrabold text-sm flex items-center gap-3 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-[3px_3px_0px_#0f172a]";
         }
 
+    // PROGRAM KERJA
     } else if (pageName === 'proker') {
-        pageProker.classList.remove('hidden');
+        if (pageProker) pageProker.classList.remove('hidden');
 
         if (subSectionId && subBtns[subSectionId]) {
             subBtns[subSectionId].className = "w-full text-left px-3 py-2 rounded-xl font-extrabold text-xs flex items-center gap-2.5 transition-all bg-amber-300 text-stone-900 border-2 border-stone-900 shadow-sm";
 
             setTimeout(() => {
                 const targetEl = document.getElementById(`proker-sec-${subSectionId}`);
+
                 if (targetEl) {
                     targetEl.scrollIntoView({
                         behavior: 'smooth',
@@ -3148,17 +4699,20 @@
         }
     }
 
+    // SCROLL KE ATAS
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
 
+    // TUTUP DRAWER
     const drawer = document.getElementById('menu-drawer');
 
     if (drawer && !drawer.classList.contains('-translate-x-full')) {
         toggleDrawer();
     }
 }
+
 
         function openPhotoModal(imgSrc, name, role, desc, badgeBgClass) {
             const modal = document.getElementById('photo-modal');
