@@ -13,144 +13,322 @@
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <meta name="google-site-verification" content="YOT5TENiIloRbYkjP0f3KLq3fK0256Qdk0mVnfN_lOA" />
     
-    <style>
-        /* Gaya Tema Baru ala Referensi Foto (Grid Background & Neubrutalism) */
-        body {
-            background-color: #faf7f2;
-            background-image: 
-                linear-gradient(to right, #ece6dc 1px, transparent 1px),
-                linear-gradient(to bottom, #ece6dc 1px, transparent 1px);
-            background-size: 24px 24px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: #0f172a;
-            margin: 0;
-            padding: 20px 10px;
-            min-height: 100vh;
-        }
+    
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
-        .notebook-container {
-            max-width: 1180px;
-            margin: 15px auto;
-            background: #ffffff;
-            border: 3px solid #0f172a;
-            border-radius: 28px;
-            box-shadow: 6px 6px 0px #0f172a;
-            position: relative;
-            padding: 40px 25px 50px 25px;
-            overflow: hidden;
-        }
+:root {
+    --ink: #172033;
+    --paper: #fffefa;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --pink: #f9a8d4;
+    --yellow: #fde68a;
+    --shadow: 5px 5px 0 var(--ink);
+}
 
-        .title-font { font-family: 'Itim', cursive, sans-serif; }
-        .sans-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+* {
+    box-sizing: border-box;
+}
 
-        /* Foto di bagan utama: Bulat penuh menutupi bingkai */
-        .sharp-photo-cover {
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            object-fit: cover;
-            filter: contrast(1.15) brightness(1.04) saturate(1.08);
-            transition: all 0.3s ease;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* Foto di dalam modal pop-up: Poster asli persegi panjang utuh */
-        .sharp-modal-photo {
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            object-fit: contain;
-            filter: contrast(1.1) brightness(1.03);
-        }
+body {
+    background-color: #f8f7ff;
+    background-image:
+        radial-gradient(circle at 10% 10%, #fbcfe8 0, transparent 25%),
+        radial-gradient(circle at 90% 20%, #bfdbfe 0, transparent 28%),
+        radial-gradient(circle at 50% 100%, #ddd6fe 0, transparent 30%),
+        linear-gradient(to right, #e8e4f1 1px, transparent 1px),
+        linear-gradient(to bottom, #e8e4f1 1px, transparent 1px);
+    background-size: auto, auto, auto, 26px 26px, 26px 26px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--ink);
+    margin: 0;
+    padding: 24px 12px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-        /* Ikhwan Glow Rings */
-        .ring-1 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #dc2626; }
-        .ring-2 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #d97706; }
-        .ring-3 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #059669; }
-        .ring-4 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #2563eb; }
-        .ring-5 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #0891b2; }
-        .ring-6 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #4f46e5; }
-        .ring-7 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #9333ea; }
-        .ring-8 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #db2777; }
-        .ring-9 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #e11d48; }
-        .ring-10 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #0d9488; }
-        .ring-11 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #ea580c; }
-        .ring-12 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #65a30d; }
-        .ring-13 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #0284c7; }
-        .ring-14 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #8b5cf6; }
-        
-        /* Akhwat Special Glow Rings */
-        .ring-ak-1 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #ec4899; }
-        .ring-ak-2 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #f43f5e; }
-        .ring-ak-3 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #a855f7; }
-        .ring-ak-4 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #06b6d4; }
-        .ring-ak-5 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #3b82f6; }
-        .ring-ak-6 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #6366f1; }
-        .ring-ak-7 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #8b5cf6; }
-        .ring-ak-8 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #d946ef; }
-        .ring-ak-9 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #f43f5e; }
-        .ring-ak-10 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #14b8a6; }
-        .ring-ak-11 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #0ea5e9; }
-        .ring-ak-12 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #6366f1; }
-        .ring-ak-13 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #e11d48; }
-        .ring-ak-14 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #f97316; }
-        .ring-ak-15 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #84cc16; }
-        .ring-ak-16 { border: 3px solid #0f172a; box-shadow: 3px 3px 0px #10b981; }
+/* Dekorasi cahaya latar */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: .35;
+    pointer-events: none;
+    z-index: -1;
+    animation: floatingGlow 9s ease-in-out infinite alternate;
+}
 
-        /* Tree Lines */
-        .tree-line-v { width: 3px; background: #0f172a; margin: 0 auto; }
-        .tree-line-ak-v { width: 3px; background: #0f172a; margin: 0 auto; }
-        .tree-line-ak-h { height: 3px; background: #0f172a; }
-        .tree-line-h { height: 3px; background: #0f172a; }
+body::before {
+    background: #c084fc;
+    top: 5%;
+    left: -100px;
+}
 
-        .card-node {
-            background: #ffffff;
-            border: 2.5px solid #0f172a;
-            box-shadow: 4px 4px 0px #0f172a;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
+body::after {
+    background: #60a5fa;
+    right: -100px;
+    bottom: 5%;
+    animation-delay: -4s;
+}
 
-        .card-node:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px #0f172a;
-        }
+@keyframes floatingGlow {
+    from { transform: translateY(-15px) scale(.9); }
+    to { transform: translateY(25px) scale(1.15); }
+}
 
-        .stamp-badge {
-            background-color: #fef08a;
-            border: 2px solid #0f172a;
-            box-shadow: 3px 3px 0px #0f172a;
-        }
+.notebook-container {
+    max-width: 1180px;
+    margin: 15px auto;
+    background: rgba(255, 255, 255, .94);
+    border: 2.5px solid var(--ink);
+    border-radius: 30px;
+    box-shadow: 8px 8px 0 var(--ink);
+    position: relative;
+    padding: 40px 25px 50px;
+    overflow: hidden;
+    isolation: isolate;
+    animation: containerEnter .7s ease both;
+}
 
-        @keyframes progress {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-        .animate-progress { animation: progress 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.notebook-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(196,181,253,.18), transparent 35%),
+        radial-gradient(circle at 0% 100%, rgba(147,197,253,.16), transparent 35%);
+    z-index: -1;
+    pointer-events: none;
+}
 
-        /* Tombol Menu */
-        .menu-btn {
-            background-color: #facc15;
-            border: 2.5px solid #0f172a;
-            border-radius: 14px;
-            padding: 8px 14px;
-            box-shadow: 3px 3px 0px #0f172a;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-        }
-        .menu-btn:hover {
-            transform: translate(-1px, -1px);
-            box-shadow: 4px 4px 0px #0f172a;
-            background-color: #fde047;
-        }
-        .menu-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px #0f172a;
-        }
+@keyframes containerEnter {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        #menu-drawer { transition: transform 0.3s ease-in-out; }
-    </style>
+.title-font {
+    font-family: 'Itim', cursive, sans-serif;
+}
+
+.sans-font {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Foto utama */
+.sharp-photo-cover {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: cover;
+    filter: contrast(1.08) brightness(1.04) saturate(1.12);
+    transition: transform .45s ease, filter .45s ease;
+}
+
+.sharp-photo-cover:hover {
+    transform: scale(1.055);
+    filter: contrast(1.12) brightness(1.06) saturate(1.2);
+}
+
+/* Foto modal */
+.sharp-modal-photo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    object-fit: contain;
+    filter: contrast(1.06) brightness(1.03);
+}
+
+/* Bingkai foto dengan warna beragam */
+.ring-1 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #dc2626; }
+.ring-2 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #d97706; }
+.ring-3 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #059669; }
+.ring-4 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #2563eb; }
+.ring-5 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #0891b2; }
+.ring-6 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #4f46e5; }
+.ring-7 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #9333ea; }
+.ring-8 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #db2777; }
+.ring-9 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #e11d48; }
+.ring-10 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #0d9488; }
+.ring-11 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #ea580c; }
+.ring-12 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #65a30d; }
+.ring-13 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #0284c7; }
+.ring-14 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #8b5cf6; }
+
+.ring-ak-1 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #ec4899; }
+.ring-ak-2 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #f43f5e; }
+.ring-ak-3 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #a855f7; }
+.ring-ak-4 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #06b6d4; }
+.ring-ak-5 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #3b82f6; }
+.ring-ak-6 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #6366f1; }
+.ring-ak-7 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #8b5cf6; }
+.ring-ak-8 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #d946ef; }
+.ring-ak-9 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #f43f5e; }
+.ring-ak-10 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #14b8a6; }
+.ring-ak-11 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #0ea5e9; }
+.ring-ak-12 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #6366f1; }
+.ring-ak-13 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #e11d48; }
+.ring-ak-14 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #f97316; }
+.ring-ak-15 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #84cc16; }
+.ring-ak-16 { border: 3px solid var(--ink); box-shadow: 3px 3px 0 #10b981; }
+
+/* Garis struktur organisasi */
+.tree-line-v,
+.tree-line-ak-v {
+    width: 3px;
+    background: linear-gradient(to bottom, #818cf8, var(--ink));
+    margin: 0 auto;
+}
+
+.tree-line-ak-h,
+.tree-line-h {
+    height: 3px;
+    background: linear-gradient(to right, #818cf8, var(--ink));
+}
+
+/* Kartu anggota */
+.card-node {
+    background: rgba(255,255,255,.96);
+    border: 2px solid var(--ink);
+    border-radius: 18px;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform .25s ease, box-shadow .25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-node::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f9a8d4);
+}
+
+.card-node:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 9px 0 var(--ink);
+}
+
+/* Badge */
+.stamp-badge {
+    background: linear-gradient(135deg, #fef08a, #fde68a);
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 var(--ink);
+    font-weight: 800;
+}
+
+/* Progress */
+@keyframes progress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+.animate-progress {
+    animation: progress 2.5s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+/* Tombol menu */
+.menu-btn {
+    background: linear-gradient(135deg, #fde68a, #facc15);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    padding: 9px 15px;
+    box-shadow: 3px 3px 0 var(--ink);
+    cursor: pointer;
+    transition: all .2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-weight: 800;
+}
+
+.menu-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+    filter: saturate(1.15);
+}
+
+.menu-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* Drawer */
+#menu-drawer {
+    transition: transform .3s ease-in-out, opacity .3s ease;
+}
+
+/* Efek fokus aksesibilitas */
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #818cf8;
+    outline-offset: 4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1edff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#a78bfa, #60a5fa);
+    border-radius: 20px;
+    border: 2px solid #f1edff;
+}
+
+/* Tampilan HP */
+@media (max-width: 640px) {
+    body {
+        padding: 12px 8px;
+        background-size: auto, auto, auto, 22px 22px, 22px 22px;
+    }
+
+    .notebook-container {
+        margin: 8px auto;
+        padding: 25px 13px 35px;
+        border-radius: 22px;
+        box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .card-node {
+        border-radius: 14px;
+    }
+
+    .menu-btn {
+        padding: 8px 11px;
+        border-radius: 11px;
+        font-size: 13px;
+    }
+}
+
+/* Kurangi animasi jika perangkat mengaturnya */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
 </head>
 <body>
 
