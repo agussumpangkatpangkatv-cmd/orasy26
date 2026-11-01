@@ -529,23 +529,442 @@ a:focus-visible {
 }
 </style>
 
-    <!-- Splash Screen -->
-    <div id="splash-screen" class="fixed inset-0 bg-[#faf7f2] z-50 flex flex-col items-center justify-center p-6 text-center transition-opacity duration-500">
-        <div class="max-w-md w-full bg-white p-8 rounded-3xl border-3 border-stone-900 shadow-[8px_8px_0px_#0f172a] relative overflow-hidden">
-            <div class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden p-1.5 bg-amber-300 border-3 border-stone-900 shadow-[4px_4px_0px_#0f172a] flex items-center justify-center">
-                <img src="https://h.top4top.io/s_39372xx6q1.jpg" alt="Logo Orasy 26" class="w-full h-full object-cover rounded-full sharp-photo-cover" onerror="this.src='https://placehold.co/200x200/dc2626/ffffff?text=ORASY+26'">
+    
+<!-- KUNCI WEBSITE SELAMA LOADING -->
+<script>
+document.documentElement.classList.add("orasy-loading");
+</script>
+
+<style>
+html.orasy-loading body #main-content,
+html.orasy-loading body main,
+html.orasy-loading body .main-app {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+html.orasy-loading #splash-screen {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 999999 !important;
+}
+
+#splash-screen {
+    box-sizing: border-box;
+    overflow-y: auto !important;
+    scrollbar-width: none;
+}
+
+#splash-screen::-webkit-scrollbar {
+    display: none;
+}
+
+/* KARTU UTAMA - UKURAN DIPERBESAR */
+.splash-card {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    padding: 29px 25px 26px;
+    background: rgba(255,255,255,.94);
+    border: 2.5px solid #172033;
+    border-radius: 30px;
+    box-shadow: 8px 8px 0 #172033,
+                0 15px 50px rgba(99,102,241,.12);
+    position: relative;
+    animation: splashEnter .8s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* LOGO */
+.splash-logo {
+    width: 110px;
+    height: 110px;
+    padding: 5px;
+    margin: 0 auto 15px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#60a5fa,#a78bfa,#f9a8d4,#facc15);
+    border: 3px solid #172033;
+    box-shadow: 4px 4px 0 #172033,
+                0 0 25px rgba(167,139,250,.35);
+    animation: splashFloat 3s ease-in-out infinite;
+}
+
+.splash-logo-inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid white;
+}
+
+.splash-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* JUDUL */
+.splash-title {
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #172033;
+    margin: 0;
+    text-shadow: 2px 2px 0 #c4b5fd;
+}
+
+.splash-divider {
+    width: 65px;
+    height: 4px;
+    border-radius: 20px;
+    background: linear-gradient(90deg,#60a5fa,#c084fc,#f9a8d4);
+    margin: 10px auto 11px;
+}
+
+.splash-school {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: #7c3aed;
+    margin: 0;
+}
+
+.splash-period {
+    font-size: 11px;
+    font-weight: 800;
+    color: #64748b;
+    margin: 6px 0 0;
+}
+
+/* SLOGAN */
+.splash-slogan {
+    background: linear-gradient(135deg,#eff6ff,#f5f3ff,#fdf2f8);
+    border: 2px solid #172033;
+    border-radius: 16px;
+    padding: 13px 14px;
+    margin: 17px 0 19px;
+    box-shadow: 3px 3px 0 #172033;
+}
+
+.splash-slogan p {
+    font-size: 12px;
+    line-height: 1.7;
+    font-weight: 700;
+    font-style: italic;
+    color: #334155;
+    margin: 0;
+}
+
+/* LOADING */
+.splash-loading {
+    margin-top: 0;
+}
+
+.splash-loading-track {
+    width: 100%;
+    height: 14px;
+    background: #e9e7f2;
+    border: 2px solid #172033;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 3px 3px 0 #172033;
+    position: relative;
+}
+
+#splash-progress {
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#60a5fa,#8b5cf6,#ec4899,#facc15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ANIMASI */
+@keyframes splashEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes splashFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes splashStar {
+    0%,100% {
+        opacity: .4;
+        transform: scale(.85) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(20deg);
+    }
+}
+
+@keyframes loadingShine {
+    from { left: -50%; }
+    to { left: 120%; }
+}
+
+.loading-dots {
+    display: inline-block;
+    width: 18px;
+    text-align: left;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: dotMove .9s steps(4,end) infinite;
+}
+
+@keyframes dotMove {
+    from { width: 0; }
+    to { width: 18px; }
+}
+
+/* RESPONSIVE HP */
+@media(max-width:480px) {
+    #splash-screen {
+        padding: 18px 15px 55px !important;
+    }
+
+    .splash-card {
+        max-width: 390px;
+        padding: 25px 21px 23px;
+        border-radius: 28px;
+    }
+
+    .splash-logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 13px;
+    }
+
+    .splash-title {
+        font-size: 35px;
+    }
+
+    .splash-slogan {
+        margin: 15px 0 17px;
+    }
+}
+
+/* LAYAR PENDEK */
+@media(max-height:650px) {
+    #splash-screen {
+        justify-content: flex-start !important;
+        padding-top: 15px !important;
+        padding-bottom: 55px !important;
+    }
+
+    .splash-card {
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+
+    .splash-logo {
+        width: 85px;
+        height: 85px;
+        margin-bottom: 10px;
+    }
+
+    .splash-slogan {
+        margin: 11px 0 13px;
+        padding: 9px 11px;
+    }
+}
+</style>
+
+<!-- SPLASH SCREEN ORASY 26 -->
+<div id="splash-screen"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center p-5 text-center transition-opacity duration-500"
+    style="
+        background:
+            radial-gradient(circle at 15% 20%,rgba(249,168,212,.45),transparent 35%),
+            radial-gradient(circle at 85% 80%,rgba(147,197,253,.5),transparent 35%),
+            linear-gradient(135deg,#f8f7ff,#fff7fb,#eff6ff);
+        position:fixed;
+        inset:0;
+        z-index:999999;
+    ">
+
+    <!-- DEKORASI BACKGROUND -->
+    <div style="position:absolute;width:220px;height:220px;background:#c4b5fd;filter:blur(90px);opacity:.45;top:5%;left:-70px;border-radius:50%;pointer-events:none;"></div>
+
+    <div style="position:absolute;width:220px;height:220px;background:#f9a8d4;filter:blur(90px);opacity:.4;bottom:5%;right:-70px;border-radius:50%;pointer-events:none;"></div>
+
+    <!-- KARTU UTAMA -->
+    <div class="splash-card">
+
+        <!-- AKSEN WARNA -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,#60a5fa,#a78bfa,#f9a8d4,#facc15);"></div>
+
+        <!-- BINTANG -->
+        <div style="position:absolute;top:19px;right:22px;color:#a78bfa;font-size:22px;animation:splashStar 3s ease-in-out infinite;">✦</div>
+
+        <div style="position:absolute;bottom:90px;left:18px;color:#60a5fa;font-size:17px;animation:splashStar 2.5s ease-in-out infinite;">✧</div>
+
+        <!-- LOGO -->
+        <div class="splash-logo">
+            <div class="splash-logo-inner">
+                <img
+                    src="https://h.top4top.io/s_39372xx6q1.jpg"
+                    alt="Logo ORASY 26"
+                    onerror="this.src='https://placehold.co/200x200/dc2626/ffffff?text=ORASY+26'">
             </div>
-            <h2 class="title-font text-3xl font-bold text-stone-900 tracking-wide mb-1">ORASY 26</h2>
-            <p class="text-xs font-extrabold uppercase tracking-widest text-red-600 sans-font mb-3">Organisasi Santri & Siswa (Ikhwan & Akhwat)</p>
-            <p class="text-xs text-stone-700 italic bg-amber-50 p-3 rounded-2xl border-2 border-stone-900 mb-6 sans-font leading-relaxed shadow-[3px_3px_0px_#0f172a]">
-                "Mengabdi dengan Integritas, Bergerak dalam Kebersamaan, Mengukir Karya Orasy 26."
+        </div>
+
+        <!-- IDENTITAS -->
+        <div>
+            <h2 class="splash-title title-font">
+                ORASY <span style="color:#8b5cf6;">26</span>
+            </h2>
+
+            <div class="splash-divider"></div>
+
+            <p class="splash-school sans-font">
+                Organisasi Santri & Siswa
             </p>
-            <div class="w-full bg-stone-100 border-2 border-stone-900 h-3 rounded-full overflow-hidden mb-2 shadow-[2px_2px_0px_#0f172a]">
-                <div class="bg-amber-400 h-full animate-progress"></div>
+
+            <p class="splash-period">
+                IKHWAN & AKHWAT • PERIODE 2026/2027
+            </p>
+        </div>
+
+        <!-- SLOGAN -->
+        <div class="splash-slogan sans-font">
+            <div style="font-size:18px;color:#8b5cf6;margin-bottom:5px;">✦</div>
+
+            <p>
+                "Mengabdi dengan Integritas, Bergerak dalam Kebersamaan, Mengukir Karya ORASY 26."
+            </p>
+        </div>
+
+        <!-- LOADING SYSTEM -->
+        <div class="splash-loading">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;">
+                <span style="font-size:11px;font-weight:900;color:#475569;letter-spacing:1.5px;">
+                    LOADING SYSTEM
+                </span>
+
+                <span id="splash-percent" style="font-size:13px;font-weight:900;color:#8b5cf6;">
+                    0%
+                </span>
             </div>
-            <p class="text-[11px] text-stone-500 sans-font font-bold">Memuat Menu Orasy 26...</p>
+
+            <div class="splash-loading-track">
+                <div id="splash-progress">
+                    <div style="
+                        position:absolute;
+                        top:0;
+                        left:-50%;
+                        width:45%;
+                        height:100%;
+                        background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);
+                        animation:loadingShine .8s linear infinite;
+                    "></div>
+                </div>
+            </div>
+
+            <p id="splash-status" class="sans-font" style="
+                font-size:11px;
+                font-weight:800;
+                color:#64748b;
+                margin:13px 0 0;
+                letter-spacing:.5px;
+            ">
+                <span style="color:#8b5cf6;">✦</span>
+                Mempersiapkan Menu ORASY 26
+                <span class="loading-dots">...</span>
+            </p>
         </div>
     </div>
+
+    <!-- FOOTER -->
+    <p style="
+        position:absolute;
+        bottom:16px;
+        left:10px;
+        right:10px;
+        font-size:9px;
+        font-weight:800;
+        letter-spacing:1.5px;
+        color:#64748b;
+        text-align:center;
+    ">
+        ✦ ONE TEAM • ONE PURPOSE • ONE FAMILY ✦
+    </p>
+</div>
+
+<!-- SCRIPT LOADING TEPAT 3 DETIK -->
+<script>
+(function () {
+    const splash = document.getElementById("splash-screen");
+    const bar = document.getElementById("splash-progress");
+    const percentText = document.getElementById("splash-percent");
+    const status = document.getElementById("splash-status");
+
+    if (!splash || !bar || !percentText) return;
+
+    document.documentElement.classList.add("orasy-loading");
+
+    if (window.orasySplashLoading) {
+        cancelAnimationFrame(window.orasySplashLoading);
+    }
+
+    const duration = 3000;
+    const startTime = performance.now();
+
+    function runLoading(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min((elapsed / duration) * 100, 100);
+        const value = Math.floor(progress);
+
+        bar.style.width = value + "%";
+        percentText.textContent = value + "%";
+
+        if (progress < 100) {
+            window.orasySplashLoading = requestAnimationFrame(runLoading);
+            return;
+        }
+
+        bar.style.width = "100%";
+        percentText.textContent = "100%";
+
+        if (status) {
+            status.innerHTML =
+                '<span style="color:#10b981;">✓</span> ORASY 26 Berhasil Dimuat!';
+        }
+
+        setTimeout(function () {
+            splash.style.transition = "opacity .5s ease";
+            splash.style.opacity = "0";
+
+            setTimeout(function () {
+                splash.style.display = "none";
+                splash.style.visibility = "hidden";
+                document.documentElement.classList.remove("orasy-loading");
+            }, 500);
+
+        }, 200);
+    }
+
+    window.orasySplashLoading = requestAnimationFrame(runLoading);
+})();
+</script>
+
 
     <!-- MAIN CONTAINER -->
     <div class="notebook-container">
